@@ -6,6 +6,7 @@ import { images } from "../../assets/image";
 import NavItem from "../ui/NavItem";
 import Search from "./Search";
 import Profile from "./Profile";
+import Cart from "./Cart";
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ onHeaderHeightChange }) => {
@@ -65,11 +66,11 @@ const Header = ({ onHeaderHeightChange }) => {
                                 <div>
                                     <ul className="cursor-pointer flex m-0 space-x-7.5 text-base font-semibold text-colorText">
                                         <Link to="/vn/wearables">
-                                            <NavItem>Máy Tính Xách Tay</NavItem>
+                                            <NavItem>Thiết Bị Đeo</NavItem>
                                         </Link>
 
-                                        <Link to="/vn/ThietBiDeo">
-                                            <NavItem>Thiết Bị Đeo</NavItem>
+                                        <Link to="/vn/laptops">
+                                            <NavItem>Máy Tính Xách Tay</NavItem>
                                         </Link>
                                         <Link to="/vn/MayTinhBan">
                                             <NavItem>Máy Tính Bảng</NavItem>
@@ -86,6 +87,7 @@ const Header = ({ onHeaderHeightChange }) => {
                                     Hỗ trợ
                                 </NavItem>
                                 <div className="flex items-center pl-10 cursor-pointer">
+                                    <Cart />
                                     <Search headerHeight={headerHeight} />
                                     <Profile />
                                 </div>

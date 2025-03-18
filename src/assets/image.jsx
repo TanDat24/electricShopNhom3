@@ -33,6 +33,12 @@ import watchUltimateCard4 from "./img/watchUltimateCard4.png";
 import DayDH from "./img/DayDH.png";
 import dayDH2 from "./img/dayDH2.png";
 import coGaiDH from "./img/coGaiDH.png";
+import matebookD from "./img/matebookD.png";
+import card5 from "./img/card5.png";
+import appgallery from "./img/appgallery.png";
+import mobileservices from "./img/mobileservices.png";
+import mobileservices2 from "./img/mobileservices2.png";
+
 const images = {
     logoImg,
     tapletImg,
@@ -69,6 +75,11 @@ const images = {
     DayDH,
     dayDH2,
     coGaiDH,
+    matebookD,
+    card5,
+    appgallery,
+    mobileservices,
+    mobileservices2,
 };
 
 export { images };

@@ -6,7 +6,7 @@ import Home from "./components/pages/Home";
 import Wearables from "./components/pages/Wearables";
 import "./index.css";
 import Footer from "./components/footer/Footer";
-import ThietBiDeo from "./components/pages/ThietBiDeo copy";
+import ThietBiDeo from "./components/pages/ThietBiDeo";
 import MayTinhBan from "./components/pages/MayTinhBan";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
                 <nav>
                     <Link to="/vn"></Link>
                     <Link to="/vn/wearables"></Link>
-                    <Link to="/vn/thietbideo"></Link>
+                    <Link to="/vn/laptops"></Link>
                     <Link to="/vn/maytinhban"></Link>
                 </nav>
                 <Routes>
@@ -32,7 +32,7 @@ function App() {
                         element={<Wearables headerHeight={headerHeight} />}
                     />
                     <Route
-                        path="/vn/thietbideo"
+                        path="/vn/laptops"
                         element={<ThietBiDeo headerHeight={headerHeight} />}
                     />
                     <Route
