@@ -7,6 +7,7 @@ import ButtonTab from "../ui/ButtonUI/ButtonTab";
 import { images } from "../../assets/image";
 import TabWear from "./../ui/TabWear";
 import TabComputer from "./../ui/TabComputer";
+import Note from "./layout/Note";
 // eslint-disable-next-line react/prop-types
 const Home = ({ headerHeight }) => {
     const [activeTab, setActiveTab] = useState(1);
@@ -141,6 +142,7 @@ const Home = ({ headerHeight }) => {
                     </div>
                 </div>
             </div>
+            <div><Note /></div>
         </div>
     );
 };

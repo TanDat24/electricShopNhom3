@@ -6,8 +6,9 @@ import Home from "./components/pages/Home";
 import Wearables from "./components/pages/Wearables";
 import "./index.css";
 import Footer from "./components/footer/Footer";
-import ThietBiDeo from "./components/pages/ThietBiDeo";
+import ThietBiDeo from "./components/pages/Laptops";
 import MayTinhBan from "./components/pages/MayTinhBan";
+import Audio from "./components/pages/audio";
 
 function App() {
     const [headerHeight, setHeaderHeight] = useState(0);
@@ -20,7 +21,8 @@ function App() {
                     <Link to="/vn"></Link>
                     <Link to="/vn/wearables"></Link>
                     <Link to="/vn/laptops"></Link>
-                    <Link to="/vn/maytinhban"></Link>
+                    <Link to="/vn/tablets"></Link>
+                    <Link to="/vn/audio"></Link>
                 </nav>
                 <Routes>
                     <Route
@@ -36,8 +38,12 @@ function App() {
                         element={<ThietBiDeo headerHeight={headerHeight} />}
                     />
                     <Route
-                        path="/vn/maytinhban"
+                        path="/vn/tablets"
                         element={<MayTinhBan headerHeight={headerHeight} />}
+                    />
+                    <Route
+                        path="/vn/audio"
+                        element={<Audio headerHeight={headerHeight} />}
                     />
                 </Routes>
                 <Footer />

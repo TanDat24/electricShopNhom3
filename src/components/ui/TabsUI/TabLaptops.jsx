@@ -23,7 +23,6 @@ const TabLaptops = () => {
                     <ContentCart
                         id="watch-ultimate"
                         title="MateBook D Series"
-                        des="Kiệt Tác Đỉnh Cao"
                         name="TalDat WATCH Ultimate"
                     />
                 </div>
@@ -63,7 +62,7 @@ const TabLaptops = () => {
                     />
                 </div>
             </div>
-            <div>
+            <div className="container mx-auto">
                 <SlideCartLaptop />
             </div>
         </div>

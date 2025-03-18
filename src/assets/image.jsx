@@ -38,6 +38,16 @@ import card5 from "./img/card5.png";
 import appgallery from "./img/appgallery.png";
 import mobileservices from "./img/mobileservices.png";
 import mobileservices2 from "./img/mobileservices2.png";
+import mobileservices3 from "./img/mobileservices3.png";
+import mobileservices4 from "./img/mobileservices4.png";
+import aiSearch from "./img/aiSearch.png";
+import music from "./img/music.png";
+import video from "./img/video.png";
+import assistantToday from "./img/assistantToday.png";
+import cloud from "./img/cloud.png";
+import mateview from "./img/mateview.png";
+import freebuds from "./img/freebuds.png";
+import freebudsPro4from from "./img/freebudsPro4.png";
 
 const images = {
     logoImg,
@@ -80,6 +90,16 @@ const images = {
     appgallery,
     mobileservices,
     mobileservices2,
+    mobileservices3,
+    mobileservices4,
+    aiSearch,
+    music,
+    video,
+    assistantToday,
+    cloud,
+    mateview,
+    freebuds,
+    freebudsPro4from,
 };
 
 export { images };
