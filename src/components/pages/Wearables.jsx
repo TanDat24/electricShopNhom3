@@ -8,6 +8,7 @@ import CartComputer from "../ui/CartUI/CartComputer";
 import ListCart from "../ui/CartUI/ListCart";
 import ButtonKPInter from "../ui/ButtonUI/ButoonKPInter";
 import CartItemWatch from "../ui/CartUI/CartItemWatch";
+import Note from "./layout/Note";
 
 // eslint-disable-next-line react/prop-types
 function Wearables({ headerHeight }) {
@@ -222,6 +223,7 @@ function Wearables({ headerHeight }) {
                     Ứng Dụng TalDat Health
                 </h1>
             </div>
+            <div><Note page="Thiết Bị Đeo"/></div>
         </div>
     );
 }

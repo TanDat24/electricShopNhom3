@@ -1,8 +1,18 @@
 import { useState } from "react";
 import ModelButtonMN from "../../model/ModelButtonMN";
 
-// eslint-disable-next-line react/prop-types
-const ButtonUI = ({ title, type }) => {
+const ButtonUI = ({
+    // eslint-disable-next-line react/prop-types
+    title,
+    // eslint-disable-next-line react/prop-types
+    type,
+    // eslint-disable-next-line react/prop-types
+    className,
+    // eslint-disable-next-line react/prop-types
+    buttonColor = "text-black",
+    // eslint-disable-next-line react/prop-types
+    svgColor = "text-black",
+}) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleOpenModal = () => {
@@ -14,10 +24,10 @@ const ButtonUI = ({ title, type }) => {
     };
 
     return (
-        <div className="flex items-center group">
+        <div className={`flex items-center group ${className}`}>
             <button
                 onClick={handleOpenModal}
-                className="font-[600] hover:text-colorText text-[15px]"
+                className={`font-[600] hover:text-colorText text-[15px] ${buttonColor}`}
             >
                 {title}
             </button>
@@ -25,7 +35,7 @@ const ButtonUI = ({ title, type }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
                 fill="currentColor"
-                className="size-5 pt-[3px] transition-transform duration-300 group-hover:translate-x-1"
+                className={`size-5 pt-[3px] transition-transform duration-300 group-hover:translate-x-1 ${svgColor}`}
             >
                 <path
                     strokeLinecap="round"
