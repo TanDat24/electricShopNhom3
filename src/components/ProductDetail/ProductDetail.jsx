@@ -7,11 +7,12 @@ const ProductDetail = () => {
   const [selectedColor, setSelectedColor] = useState("black");
   const [activeTab, setActiveTab] = useState("specs");
 
-  // Thêm state cho đánh giá
+  // Review states
   const [userRating, setUserRating] = useState(0);
   const [userReview, setUserReview] = useState("");
   const [reviews, setReviews] = useState([]);
   const [hoveredStar, setHoveredStar] = useState(0);
+  const [isLoadingReviews, setIsLoadingReviews] = useState(true);
 
   // Sample product data
   const product = {
@@ -43,38 +44,9 @@ const ProductDetail = () => {
       weight: "3.1kg",
       dimensions: "399 x 294 x 23.1 mm",
     },
-    reviewList: [
-      {
-        id: 1,
-        user: "Gaming_Pro",
-        rating: 5,
-        date: "2025-01-15",
-        comment:
-          "The best gaming laptop I've ever owned. Performance is incredible, and the cooling system is amazing.",
-        likes: 28,
-      },
-      {
-        id: 2,
-        user: "TechReviewer",
-        rating: 4,
-        date: "2025-01-05",
-        comment:
-          "Almost perfect. Great performance but a bit on the heavy side. Battery life could be better.",
-        likes: 15,
-      },
-      {
-        id: 3,
-        user: "CreativeDesigner",
-        rating: 5,
-        date: "2024-12-22",
-        comment:
-          "Excellent for both gaming and creative work. The display is stunning and color accurate.",
-        likes: 10,
-      },
-    ],
   };
 
-  // Thêm CSS cho phần đánh giá sao
+  // Star styling
   const starStyles = {
     container: {
       display: "flex",
@@ -90,27 +62,60 @@ const ProductDetail = () => {
       color: "#ddd",
     },
     hovered: {
-      color: "#ffcc00",
+      color: "#363636",
     },
     selected: {
-      color: "#ff9900",
+      color: "#363636",
       fontWeight: "bold",
     },
   };
 
-  // Khởi tạo danh sách đánh giá từ dữ liệu mẫu
+  // Fetch reviews from the API
   useEffect(() => {
-    // Thử lấy dữ liệu từ localStorage
-    const savedReviews = localStorage.getItem(`product_reviews_${product.id}`);
-    if (savedReviews) {
-      setReviews(JSON.parse(savedReviews));
-    } else {
-      setReviews(product.reviewList);
-    }
     setSelectedImage(product.images.black);
+
+    const fetchReviews = async () => {
+      setIsLoadingReviews(true);
+      try {
+        const response = await fetch(
+          "https://67da8b1935c87309f52cfe4b.mockapi.io/comment"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch reviews");
+        }
+        const data = await response.json();
+
+        // Transform API data to match our review structure
+        const formattedReviews = data.map((item) => ({
+          id: item.id,
+          user: item.user || `User_${item.id}`,
+          rating: item.rating || Math.floor(Math.random() * 5) + 1,
+          date: item.createdAt
+            ? new Date(item.createdAt).toISOString().split("T")[0]
+            : new Date().toISOString().split("T")[0],
+          comment: item.comment || item.description || "",
+          likes: item.likes || 0,
+        }));
+
+        setReviews(formattedReviews);
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+        // Fallback to local storage if API fails
+        const savedReviews = localStorage.getItem(
+          `product_reviews_${product.id}`
+        );
+        if (savedReviews) {
+          setReviews(JSON.parse(savedReviews));
+        }
+      } finally {
+        setIsLoadingReviews(false);
+      }
+    };
+
+    fetchReviews();
   }, []);
 
-  // Hàm lưu trữ đánh giá mới
+  // Submit new review
   const handleSubmitReview = () => {
     if (userRating === 0 || userReview.trim() === "") {
       alert("Vui lòng nhập đánh giá và chọn số sao");
@@ -118,19 +123,19 @@ const ProductDetail = () => {
     }
 
     const newReview = {
-      id: Date.now(), // Sử dụng timestamp làm ID
-      user: "User_" + Math.floor(Math.random() * 1000), // Tạo tên người dùng ngẫu nhiên
+      id: Date.now().toString(),
+      user: "User_" + Math.floor(Math.random() * 1000),
       rating: userRating,
       date: new Date().toISOString().split("T")[0],
       comment: userReview,
       likes: 0,
     };
 
-    // Thêm đánh giá mới vào danh sách
+    // Add new review to the list
     const updatedReviews = [...reviews, newReview];
     setReviews(updatedReviews);
 
-    // Lưu vào localStorage để giữ dữ liệu
+    // Save to localStorage for persistence
     localStorage.setItem(
       `product_reviews_${product.id}`,
       JSON.stringify(updatedReviews)
@@ -141,7 +146,7 @@ const ProductDetail = () => {
     setUserReview("");
   };
 
-  // Hàm tăng số lượt thích cho đánh giá
+  // Like a review
   const handleLikeReview = (reviewId) => {
     const updatedReviews = reviews.map((review) => {
       if (review.id === reviewId) {
@@ -182,14 +187,17 @@ const ProductDetail = () => {
     setQuantity(quantity + 1);
   };
 
-  // Tính toán xếp hạng trung bình
+  // Calculate average rating
   const calculateAverageRating = () => {
     if (reviews.length === 0) return 0;
-    const sum = reviews.reduce((total, review) => total + review.rating, 0);
+    const sum = reviews.reduce(
+      (total, review) => total + Number(review.rating),
+      0
+    );
     return (sum / reviews.length).toFixed(1);
   };
 
-  // Hiển thị số sao
+  // Render stars based on rating
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 >= 0.5;
@@ -204,7 +212,7 @@ const ProductDetail = () => {
     );
   };
 
-  // Hiển thị sao với màu đậm khi chọn
+  // Render interactive rating stars
   const renderRatingStars = () => {
     return (
       <div style={starStyles.container}>
@@ -430,42 +438,48 @@ const ProductDetail = () => {
             </div>
 
             <div className="review-list">
-              {reviews.map((review) => (
-                <div key={review.id} className="review-item">
-                  <div className="review-header">
-                    <div className="reviewer-name">{review.user}</div>
-                    <div className="review-rating">
-                      <div style={starStyles.container}>
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <span
-                            key={star}
-                            style={{
-                              ...starStyles.star,
-                              ...(star <= review.rating
-                                ? starStyles.selected
-                                : starStyles.unselected),
-                              cursor: "default",
-                            }}
-                          >
-                            ★
-                          </span>
-                        ))}
+              {isLoadingReviews ? (
+                <div className="loading-reviews">Đang tải đánh giá...</div>
+              ) : reviews.length === 0 ? (
+                <div className="no-reviews">Chưa có đánh giá nào</div>
+              ) : (
+                reviews.map((review) => (
+                  <div key={review.id} className="review-item">
+                    <div className="review-header">
+                      <div className="reviewer-name">{review.user}</div>
+                      <div className="review-rating">
+                        <div style={starStyles.container}>
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <span
+                              key={star}
+                              style={{
+                                ...starStyles.star,
+                                ...(star <= review.rating
+                                  ? starStyles.selected
+                                  : starStyles.unselected),
+                                cursor: "default",
+                              }}
+                            >
+                              ★
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
+                    <div className="review-date">{review.date}</div>
+                    <div className="review-comment">{review.comment}</div>
+                    <div className="review-actions">
+                      <button
+                        className="like-button"
+                        onClick={() => handleLikeReview(review.id)}
+                      >
+                        <span className="like-icon">👍</span>
+                        <span className="like-count">{review.likes}</span>
+                      </button>
+                    </div>
                   </div>
-                  <div className="review-date">{review.date}</div>
-                  <div className="review-comment">{review.comment}</div>
-                  <div className="review-actions">
-                    <button
-                      className="like-button"
-                      onClick={() => handleLikeReview(review.id)}
-                    >
-                      <span className="like-icon">👍</span>
-                      <span className="like-count">{review.likes}</span>
-                    </button>
-                  </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
 
             <div className="write-review">
@@ -494,7 +508,7 @@ const ProductDetail = () => {
                 style={{
                   marginTop: "10px",
                   padding: "10px 20px",
-                  backgroundColor: "#ff4500",
+                  backgroundColor: "#363636",
                   color: "white",
                   border: "none",
                   borderRadius: "5px",

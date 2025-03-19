@@ -6,6 +6,9 @@ module.exports = {
             spacing: {
                 7.5: "30px", // Thêm giá trị tùy chỉnh cho spacing
             },
+            overflow: {
+                initial: "initial",
+            },
             colors: {
                 transparent: "transparent",
                 colorText: "#111827",
