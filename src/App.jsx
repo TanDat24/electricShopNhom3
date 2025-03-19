@@ -30,7 +30,6 @@ function App() {
     return (
         <Router>
             <div>
-                {/* Truyền user và handleLogout xuống Header */}
                 <Header user={user} handleLogout={handleLogout} />
                 <Routes>
                     <Route path="/vn" element={<Home />} />

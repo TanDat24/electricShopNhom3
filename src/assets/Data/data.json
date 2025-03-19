@@ -1,0 +1,34 @@
+[
+  {
+    "email": "test@example.com",
+    "password": "123456",
+    "name": "Nguyễn Văn A",
+    "phone": "0123456789",
+    "address": "Hà Nội, Việt Nam",
+    "role": "Khách hàng"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "abcdef",
+    "name": "Trần Thị B",
+    "phone": "0987654321",
+    "address": "TP.HCM, Việt Nam",
+    "role": "Quản trị viên"
+  },
+  {
+    "email": "user3@example.com",
+    "password": "123abc",
+    "name": "Phạm Văn C",
+    "phone": "0912345678",
+    "address": "Đà Nẵng, Việt Nam",
+    "role": "Nhân viên"
+  },
+  {
+    "name": "Ngô Trần Văn Điềm",
+    "email": "vandiem2004@gmail.com",
+    "phone": "0398752911",
+    "address": "TPHCM",
+    "password": "123456",
+    "role": "Nhân viên"
+  }
+]

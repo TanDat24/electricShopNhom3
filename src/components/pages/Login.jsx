@@ -1,36 +1,29 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import userData from "../../assets/Data/data.json"; // Đúng đường dẫn
 
 const Login = ({ setUser }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    // Dữ liệu user giả lập
-    const fakeUser = {
-        email: "test@example.com",
-        password: "123456",
-        name: "Nguyễn Văn A",
-        phone: "0123456789",
-        address: "Hà Nội, Việt Nam",
-        role: "Khách hàng",
-    };
-
     const handleLogin = (e) => {
         e.preventDefault();
 
-        if (email === fakeUser.email && password === fakeUser.password) {
-            setUser(fakeUser);
-            localStorage.setItem("user", JSON.stringify(fakeUser)); 
-            navigate("/vn"); 
+        // Tìm kiếm user phù hợp
+        const user = userData.find((u) => u.email === email && u.password === password);
+
+        if (user) {
+            setUser(user);
+            localStorage.setItem("user", JSON.stringify(user));
+            navigate("/vn");
         } else {
             alert("Sai tài khoản hoặc mật khẩu!");
         }
     };
 
     return (
-        <div
-            className="min-h-screen flex items-center justify-center bg-cover bg-center"
+        <div className="min-h-screen flex items-center justify-center bg-cover bg-center"
             style={{ backgroundImage: `url('https://source.unsplash.com/1600x900/?bridge')` }}
         >
             <div className="bg-white shadow-lg rounded-lg w-96 p-8">
@@ -56,8 +49,7 @@ const Login = ({ setUser }) => {
                             required
                         />
                     </div>
-                    <button
-                        type="submit"
+                    <button type="submit"
                         className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition"
                     >
                         Đăng nhập

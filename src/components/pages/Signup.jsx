@@ -1,13 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
+    phone: "",
+    address: "",
     password: "",
+    confirmPassword: "", // Chỉ dùng để kiểm tra, không gửi lên server
+    role: "Nhân viên",
   });
 
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  // Xử lý thay đổi input
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -15,10 +23,39 @@ const Signup = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  // Xử lý đăng ký
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("User Data:", formData);
-    alert("Sign up successful!");
+
+    // Kiểm tra mật khẩu nhập lại có khớp không
+    if (formData.password !== formData.confirmPassword) {
+      setError("Mật khẩu nhập lại không khớp!");
+      return;
+    }
+
+    // Chuẩn bị dữ liệu gửi lên server (bỏ confirmPassword)
+    const { confirmPassword, ...dataToSend } = formData;
+
+    try {
+      const response = await fetch("http://localhost:5000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSend), // Không gửi confirmPassword
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert("Đăng ký thành công!");
+        navigate("/vn/login"); // Chuyển hướng về trang đăng nhập
+      } else {
+        setError(data.message);
+      }
+    } catch (err) {
+      console.error("Lỗi:", err);
+      setError("Đăng ký thất bại!");
+    }
   };
 
   return (
@@ -29,68 +66,23 @@ const Signup = () => {
       }}
     >
       <div className="bg-white shadow-lg rounded-lg w-96 p-8">
-        <h2 className="text-center text-2xl font-bold text-gray-700 mb-6">
-          ĐĂNG KÝ
-        </h2>
+        <h2 className="text-center text-2xl font-bold text-gray-700 mb-6">ĐĂNG KÝ</h2>
+        {error && <p className="text-red-500 text-center">{error}</p>}
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full Name"
-              value={formData.fullName}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition"
-          >
+          <input type="text" name="name" placeholder="Họ và Tên" value={formData.name} onChange={handleChange} required className="w-full p-3 border rounded-md mb-2" />
+          <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required className="w-full p-3 border rounded-md mb-2" />
+          <input type="text" name="phone" placeholder="Số điện thoại" value={formData.phone} onChange={handleChange} required className="w-full p-3 border rounded-md mb-2" />
+          <input type="text" name="address" placeholder="Địa chỉ" value={formData.address} onChange={handleChange} required className="w-full p-3 border rounded-md mb-2" />
+          <input type="password" name="password" placeholder="Mật khẩu" value={formData.password} onChange={handleChange} required className="w-full p-3 border rounded-md mb-2" />
+          <input type="password" name="confirmPassword" placeholder="Nhập lại mật khẩu" value={formData.confirmPassword} onChange={handleChange} required className="w-full p-3 border rounded-md mb-2" />
+          <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
             Đăng Ký
           </button>
         </form>
-        <div className="text-center my-4 text-gray-500">OR</div>
-        <div className="flex justify-center space-x-4">
-          <button className="bg-blue-600 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center">
-            F
-          </button>
-          <button className="bg-blue-400 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center">
-            T
-          </button>
-          <button className="bg-red-500 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center">
-            G+
-          </button>
-        </div>
         <div className="text-center mt-4">
           <p className="text-gray-500">
-            Bạn đã có tài khoản ?{" "}
-            <Link to="/vn/login" className="text-blue-500 hover:underline">
-              Đăng Nhập
-            </Link>
+            Bạn đã có tài khoản?{" "}
+            <Link to="/vn/login" className="text-blue-500 hover:underline">Đăng Nhập</Link>
           </p>
         </div>
       </div>
