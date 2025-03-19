@@ -77,6 +77,13 @@ const ProductDetail = () => {
     const fetchReviews = async () => {
       setIsLoadingReviews(true);
       try {
+        // First check if we have any reviews in localStorage
+        const savedReviews = localStorage.getItem(
+          `product_reviews_${product.id}`
+        );
+        let localReviews = savedReviews ? JSON.parse(savedReviews) : [];
+
+        // Then fetch from API
         const response = await fetch(
           "https://67da8b1935c87309f52cfe4b.mockapi.io/comment"
         );
@@ -97,7 +104,29 @@ const ProductDetail = () => {
           likes: item.likes || 0,
         }));
 
-        setReviews(formattedReviews);
+        // Merge API reviews with localStorage reviews
+        // First create a map of existing reviews by ID
+        const reviewMap = new Map();
+        localReviews.forEach((review) => {
+          reviewMap.set(review.id, review);
+        });
+
+        // Add API reviews if they don't exist in local
+        formattedReviews.forEach((review) => {
+          if (!reviewMap.has(review.id)) {
+            reviewMap.set(review.id, review);
+          }
+        });
+
+        // Convert map back to array
+        const mergedReviews = Array.from(reviewMap.values());
+
+        // Save merged reviews to state and localStorage
+        setReviews(mergedReviews);
+        localStorage.setItem(
+          `product_reviews_${product.id}`,
+          JSON.stringify(mergedReviews)
+        );
       } catch (error) {
         console.error("Error fetching reviews:", error);
         // Fallback to local storage if API fails
