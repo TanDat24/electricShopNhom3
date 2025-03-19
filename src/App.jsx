@@ -8,41 +8,49 @@ import "./index.css";
 import Footer from "./components/footer/Footer";
 import ThietBiDeo from "./components/pages/ThietBiDeo copy";
 import MayTinhBan from "./components/pages/MayTinhBan";
-
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 function App() {
     const [headerHeight, setHeaderHeight] = useState(0);
-
     return (
+        // <Router>
+        //     <div>
+        //         <Header onHeaderHeightChange={setHeaderHeight} />
+        //         <nav>
+        //             <Link to="/vn"></Link>
+        //             <Link to="/vn/wearables"></Link>
+        //             <Link to="/vn/thietbideo"></Link>
+        //             <Link to="/vn/maytinhban"></Link>
+        //         </nav>
+        //         <Routes>
+        //             <Route
+        //                 path="/vn"
+        //                 element={<Home headerHeight={headerHeight} />}
+        //             />
+        //             <Route
+        //                 path="/vn/wearables"
+        //                 element={<Wearables headerHeight={headerHeight} />}
+        //             />
+        //             <Route
+        //                 path="/vn/thietbideo"
+        //                 element={<ThietBiDeo headerHeight={headerHeight} />}
+        //             />
+        //             <Route
+        //                 path="/vn/maytinhban"
+        //                 element={<MayTinhBan headerHeight={headerHeight} />}
+        //             />
+        //         </Routes>
+        //         <Footer />
+        //     </div>
+        // </Router>
         <Router>
             <div>
-                <Header onHeaderHeightChange={setHeaderHeight} />
-                <nav>
-                    <Link to="/vn"></Link>
-                    <Link to="/vn/wearables"></Link>
-                    <Link to="/vn/thietbideo"></Link>
-                    <Link to="/vn/maytinhban"></Link>
-                </nav>
-                <Routes>
-                    <Route
-                        path="/vn"
-                        element={<Home headerHeight={headerHeight} />}
-                    />
-                    <Route
-                        path="/vn/wearables"
-                        element={<Wearables headerHeight={headerHeight} />}
-                    />
-                    <Route
-                        path="/vn/thietbideo"
-                        element={<ThietBiDeo headerHeight={headerHeight} />}
-                    />
-                    <Route
-                        path="/vn/maytinhban"
-                        element={<MayTinhBan headerHeight={headerHeight} />}
-                    />
-                </Routes>
-                <Footer />
+            <Header onHeaderHeightChange={setHeaderHeight} />
+            <ProductDetail />
+
+
+            <Footer />
             </div>
-        </Router>
+         </Router>
     );
 }
 
