@@ -24,7 +24,13 @@ const Home = ({ headerHeight }) => {
                     <BannerItem
                         title={products[1].title}
                         describe={products[1].des}
-                        buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                        buttonkp={
+                            <ButtonKPBasic
+                                title="Khám phá"
+                                productId={products[1].name}
+                                category="wearables"
+                            />
+                        }
                         buttonmn={<ButtonMNBasic />}
                         image={products[1].image[0]} // Lấy ảnh đầu tiên
                     />
@@ -33,7 +39,13 @@ const Home = ({ headerHeight }) => {
                     <BannerItem
                         title={tablets[1].title}
                         describe={tablets[1].des}
-                        buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                        buttonkp={
+                            <ButtonKPBasic
+                                title="Khám phá"
+                                productId={tablets[1].name}
+                                category="tablets"
+                            />
+                        }
                         buttonmn={<ButtonMNBasic />}
                         image={tablets[1].images.anh1} // Lấy ảnh đầu tiên
                     />
@@ -46,7 +58,13 @@ const Home = ({ headerHeight }) => {
                             isHalfCol={true}
                             title={products[8].title}
                             describe={products[8].des}
-                            buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                            buttonkp={
+                                <ButtonKPBasic
+                                    title="Khám phá"
+                                    productId={products[8].name}
+                                    category="wearable"
+                                />
+                            }
                             buttonmn={<ButtonMNBasic />}
                             image={products[8].image[0]} // Lấy ảnh đầu tiên
                         />
@@ -58,7 +76,13 @@ const Home = ({ headerHeight }) => {
                             isHalfCol={true}
                             title={products[7].title}
                             describe={products[7].des}
-                            buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                            buttonkp={
+                                <ButtonKPBasic
+                                    title="Khám phá"
+                                    productId={products[7].name}
+                                    category="wearable"
+                                />
+                            }
                             buttonmn={<ButtonMNBasic />}
                             image={products[7].image[0]} // Lấy ảnh đầu tiên
                         />
@@ -70,7 +94,13 @@ const Home = ({ headerHeight }) => {
                             isHalfCol={true}
                             title={products[6].title}
                             describe={products[6].des}
-                            buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                            buttonkp={
+                                <ButtonKPBasic
+                                    title="Khám phá"
+                                    productId={products[6].name}
+                                    category="wearable"
+                                />
+                            }
                             buttonmn={<ButtonMNBasic />}
                             image={products[6].image[0]} // Lấy ảnh đầu tiên
                         />
@@ -81,7 +111,13 @@ const Home = ({ headerHeight }) => {
                         <BannerItem
                             title={audios[1].title}
                             describe={audios[1].des}
-                            buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                            buttonkp={
+                                <ButtonKPBasic
+                                    title="Khám phá"
+                                    productId={audios[1].name}
+                                    category="wearable"
+                                />
+                            }
                             buttonmn={<ButtonMNBasic />}
                             image={audios[1].images.anh1} // Lấy ảnh đầu tiên
                         />

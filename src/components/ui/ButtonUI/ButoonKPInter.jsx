@@ -1,16 +1,18 @@
 import { useState } from "react";
 import ParentComponent from "../../model/ParentComponent ";
+import { useNavigate } from "react-router-dom";
 
 const ButtonKPInter = ({
-    // eslint-disable-next-line react/prop-types
-    title, // eslint-disable-next-line react/prop-types
-    icon = false, // eslint-disable-next-line react/prop-types
-    audio = false, // eslint-disable-next-line react/prop-types
-    watch = false, // eslint-disable-next-line react/prop-types
-    tablet = false, // eslint-disable-next-line react/prop-types
-    link = "/",
+    title,
+    productId,
+    category,
+    icon = false,
+    audio = false,
+    watch = false,
+    tablet = false,
 }) => {
     const [showModal, setShowModal] = useState(null);
+    const navigate = useNavigate();
 
     const handleClick = () => {
         if (audio) {
@@ -19,15 +21,26 @@ const ButtonKPInter = ({
             setShowModal("watch");
         } else if (tablet) {
             setShowModal("tablet");
+        }
+    };
+
+    const handleButtonClick = () => {
+        const path = `/vn/${category}/product-detail/${productId}`;
+        navigate(path);
+    };
+
+    const combinedHandleClick = () => {
+        if (icon) {
+            handleClick();
         } else {
-            window.location.href = link;
+            handleButtonClick();
         }
     };
 
     return (
         <>
             <button
-                onClick={handleClick}
+                onClick={combinedHandleClick}
                 className="text-[14px] mx-3 my-2 p-[14px] w-1/2 bg-colorText text-white font-bold rounded-lg hover:bg-darkBlue flex items-center justify-center gap-2 group"
             >
                 {title}
