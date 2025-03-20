@@ -1,15 +1,10 @@
-import { images } from "../../../assets/image";
 import ButtonUI from "../ButtonUI/ButtonUI";
 
 // eslint-disable-next-line react/prop-types
-const CartComputer = ({ des }) => {
+const CartComputer = ({ des, image }) => {
     return (
         <div className="flex items-center justify-evenly bg-white rounded-md h-full overflow-hidden">
-            <img
-                src={images.matepad115}
-                alt="watchGt5Pro"
-                className="w-1/4 mr-10"
-            />
+            <img src={image} alt="watchGt5Pro" className="w-2/5 mr-10" />
             <div>
                 <div className="w-full ">
                     <p className="text-center text-[22px] font-medium">

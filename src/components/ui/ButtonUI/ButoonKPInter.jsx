@@ -1,27 +1,24 @@
 import { useState } from "react";
-import ModelButtonAllAudio from "../../model/ModelButtonAllAudio";
-import ModelButtonAllWatch from "../../model/ModelButtonAllWatch";
+import ParentComponent from "../../model/ParentComponent ";
 
 const ButtonKPInter = ({
     // eslint-disable-next-line react/prop-types
-    title,
-    // eslint-disable-next-line react/prop-types
-    icon = false,
-    // eslint-disable-next-line react/prop-types
-    audio = false,
-    // eslint-disable-next-line react/prop-types
-    watch = false,
-    // eslint-disable-next-line react/prop-types
+    title, // eslint-disable-next-line react/prop-types
+    icon = false, // eslint-disable-next-line react/prop-types
+    audio = false, // eslint-disable-next-line react/prop-types
+    watch = false, // eslint-disable-next-line react/prop-types
+    tablet = false, // eslint-disable-next-line react/prop-types
     link = "/",
 }) => {
-    const [showAudioModal, setShowAudioModal] = useState(false);
-    const [showWatchModal, setShowWatchModal] = useState(false);
+    const [showModal, setShowModal] = useState(null);
 
     const handleClick = () => {
         if (audio) {
-            setShowAudioModal(true);
+            setShowModal("audio");
         } else if (watch) {
-            setShowWatchModal(true);
+            setShowModal("watch");
+        } else if (tablet) {
+            setShowModal("tablet");
         } else {
             window.location.href = link;
         }
@@ -52,12 +49,11 @@ const ButtonKPInter = ({
                 )}
             </button>
 
-            {showAudioModal && (
-                <ModelButtonAllAudio onClose={() => setShowAudioModal(false)} />
-            )}
-
-            {showWatchModal && (
-                <ModelButtonAllWatch onClose={() => setShowWatchModal(false)} />
+            {showModal && (
+                <ParentComponent
+                    type={showModal}
+                    onClose={() => setShowModal(null)}
+                />
             )}
         </>
     );
