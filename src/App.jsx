@@ -9,7 +9,9 @@ import ParentWearable from "./components/pages/parentPages/ParentWearable";
 import ParentTaplet from "./components/pages/parentPages/ParentTaplet";
 import ParentAudio from "./components/pages/parentPages/ParentAudio";
 import ParentHome from "./components/pages/parentPages/ParentHome";
+
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+
 function App() {
     const [headerHeight, setHeaderHeight] = useState(0);
 
@@ -44,12 +46,14 @@ function App() {
                     <Route
                         path="/vn/audio"
                         element={<ParentAudio headerHeight={headerHeight} />}
+
                     />
 
                     {/* Route cho từng loại sản phẩm */}
                     <Route
                         path="/vn/:category/product-detail/:productId"
                         element={<ProductDetail />}
+
                     />
                 </Routes>
 
