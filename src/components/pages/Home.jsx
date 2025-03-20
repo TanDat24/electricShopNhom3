@@ -2,82 +2,90 @@ import { useState } from "react";
 import BannerItem from "./layout/BannerItem";
 import ButtonKPBasic from "../ui/ButtonUI/ButtonKPBasic";
 import ButtonMNBasic from "../ui/ButtonUI/ButtonMNBasic";
-import ButtonUI from "../ui/ButtonUI/ButtonUI";
 import ButtonTab from "../ui/ButtonUI/ButtonTab";
-import { images } from "../../assets/image";
 import TabWear from "./../ui/TabWear";
 import TabComputer from "./../ui/TabComputer";
 import Note from "./layout/Note";
+import { useProducts } from "../../../api/WearablesAPI";
 // eslint-disable-next-line react/prop-types
 const Home = ({ headerHeight }) => {
     const [activeTab, setActiveTab] = useState(1);
+    const { products, tablets, audios } = useProducts();
     return (
         <div
-            className="bg-background"
+            className="bg-background pt-[2rem]"
             style={{
                 minHeight: `calc(100vh - ${headerHeight}px)`,
                 marginTop: `${headerHeight}px`,
             }}
         >
             <div className="container mx-auto grid grid-cols-1 gap-2 pb-4">
-                <BannerItem
-                    title={"HUAWEI WATCH GT 5 Pro"}
-                    describe={"Fashion Edge"}
-                    buttonkp={<ButtonKPBasic title="Khám Phá" />}
-                    buttonmn={<ButtonMNBasic />}
-                    image={images.watchGt5Pro}
-                />
-                <BannerItem
-                    title={"HUAWEI WATCH D2"}
-                    describe={"Health Forward"}
-                    buttonkp={<ButtonKPBasic title="Khám Phá" />}
-                    buttonmn={<ButtonMNBasic />}
-                    image={images.watchD2Pc}
-                />
-                <BannerItem
-                    title={"HUAWEI MatePad Pro"}
-                    describe={"Creation of Beauty"}
-                    buttonkp={<ButtonKPBasic title="Khám Phá" />}
-                    buttonmn={<ButtonMNBasic />}
-                    image={images.huaweiMatepad}
-                />
+                {products[1] && (
+                    <BannerItem
+                        title={products[1].title}
+                        describe={products[1].des}
+                        buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                        buttonmn={<ButtonMNBasic />}
+                        image={products[1].image[0]} // Lấy ảnh đầu tiên
+                    />
+                )}
+                {tablets[1] && (
+                    <BannerItem
+                        title={tablets[1].title}
+                        describe={tablets[1].des}
+                        buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                        buttonmn={<ButtonMNBasic />}
+                        image={tablets[1].images.anh1} // Lấy ảnh đầu tiên
+                    />
+                )}
             </div>
             <div className="container mx-auto grid grid-cols-2 gap-2 ">
                 <div className="w-full">
-                    <BannerItem
-                        title={"HUAWEI WATCH GT 5 Pro"}
-                        describe={"Fashion Edge"}
-                        buttonkp={<ButtonUI title="Khám phá" type="khampham" />}
-                        buttonmn={<ButtonUI title="Mua ngay" type="muangay" />}
-                        image={images.watchGt5Pc}
-                    />
+                    {products[8] && (
+                        <BannerItem
+                            isHalfCol={true}
+                            title={products[8].title}
+                            describe={products[8].des}
+                            buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                            buttonmn={<ButtonMNBasic />}
+                            image={products[8].image[0]} // Lấy ảnh đầu tiên
+                        />
+                    )}
                 </div>
                 <div className="w-full">
-                    <BannerItem
-                        title={"HUAWEI WATCH GT 5"}
-                        describe={"Fashion Edge"}
-                        buttonkp={<ButtonUI title="Khám phá" type="khampham" />}
-                        buttonmn={<ButtonUI title="Mua ngay" type="muangay" />}
-                        image={images.watchFit3Pc}
-                    />
+                    {products[7] && (
+                        <BannerItem
+                            isHalfCol={true}
+                            title={products[7].title}
+                            describe={products[7].des}
+                            buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                            buttonmn={<ButtonMNBasic />}
+                            image={products[7].image[0]} // Lấy ảnh đầu tiên
+                        />
+                    )}
                 </div>
                 <div className="w-full">
-                    <BannerItem
-                        title={"HUAWEI MatePad 11.5"}
-                        describe={"Handy All-Rounder"}
-                        buttonkp={<ButtonUI title="Khám phá" type="khampham" />}
-                        buttonmn={<ButtonUI title="Mua ngay" type="muangay" />}
-                        image={images.huaweiMatepadGrey}
-                    />
+                    {products[6] && (
+                        <BannerItem
+                            isHalfCol={true}
+                            title={products[6].title}
+                            describe={products[6].des}
+                            buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                            buttonmn={<ButtonMNBasic />}
+                            image={products[6].image[0]} // Lấy ảnh đầu tiên
+                        />
+                    )}
                 </div>
                 <div className="w-full">
-                    <BannerItem
-                        title={"HUAWEI FreeBuds Pro 4"}
-                        describe={"Catch the Sound"}
-                        buttonkp={<ButtonUI title="Khám phá" type="khampham" />}
-                        buttonmn={<ButtonUI title="Mua ngay" type="muangay" />}
-                        image={images.freebudsPropc}
-                    />
+                    {audios[1] && (
+                        <BannerItem
+                            title={audios[1].title}
+                            describe={audios[1].des}
+                            buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                            buttonmn={<ButtonMNBasic />}
+                            image={audios[1].images.anh1} // Lấy ảnh đầu tiên
+                        />
+                    )}
                 </div>
             </div>
             <div className="container mx-auto ">
@@ -116,12 +124,14 @@ const Home = ({ headerHeight }) => {
                                 }}
                             >
                                 <div className="min-w-full">
-                                    <TabWear
-                                        activeTab={activeTab}
-                                        index={1}
-                                        title="Thiết Bị Đeo"
-                                        describe="Toàn Diện Tính Năng Chăm Sóc Sức Khỏe Và Tập Luyện Chuyên Nghiệp"
-                                    />
+                                    {products[6] && (
+                                        <TabWear
+                                            activeTab={activeTab}
+                                            index={1}
+                                            title={products[6].title}
+                                            describe={products[6].des}
+                                        />
+                                    )}
                                 </div>
                                 <div className="min-w-full">
                                     <TabComputer
@@ -142,7 +152,9 @@ const Home = ({ headerHeight }) => {
                     </div>
                 </div>
             </div>
-            <div><Note /></div>
+            <div>
+                <Note />
+            </div>
         </div>
     );
 };

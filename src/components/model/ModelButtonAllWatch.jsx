@@ -1,9 +1,11 @@
 import CartComputer from "../ui/CartUI/CartComputer";
 import ListCart from "../ui/CartUI/ListCart";
-import { images } from "../../assets/image";
+import { useProducts } from "../../../api/WearablesAPI";
 
 // eslint-disable-next-line react/prop-types
 const ModelButtonAllWatch = ({ onClose }) => {
+    const { products } = useProducts();
+
     return (
         <div
             className="fixed inset-0 z-50 flex justify-center items-start bg-black bg-opacity-50 "
@@ -40,7 +42,12 @@ const ModelButtonAllWatch = ({ onClose }) => {
                             WATCH Ultimate Series
                         </h1>
                         <div>
-                            <CartComputer />
+                            {products[18] && (
+                                <CartComputer
+                                    image={products[18].image}
+                                    des={products[18].des}
+                                />
+                            )}
                         </div>
                     </div>
                     <div>
@@ -49,16 +56,20 @@ const ModelButtonAllWatch = ({ onClose }) => {
                         </h1>
                         <div className="grid grid-cols-2 gap-2 p-6">
                             <div className="bg-white rounded-lg p-4">
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
+                                {products[19] && (
+                                    <ListCart
+                                        images={products[19].image}
+                                        name={products[19].name}
+                                    />
+                                )}
                             </div>
                             <div className="bg-white rounded-lg p-4">
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
+                                {products[20] && (
+                                    <ListCart
+                                        images={products[20].image}
+                                        name={products[20].name}
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>
@@ -68,33 +79,50 @@ const ModelButtonAllWatch = ({ onClose }) => {
                         </h1>
                         <div className="p-6 ">
                             <div className="mb-2">
-                                <CartComputer />
+                                {products[21] && (
+                                    <CartComputer
+                                        image={products[21].image}
+                                        des={products[21].des}
+                                    />
+                                )}
                             </div>
                             <div className="grid grid-cols-2 gap-2">
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
+                                {products[22] && (
+                                    <ListCart
+                                        images={products[22].image}
+                                        name={products[22].name}
+                                    />
+                                )}
+                                {products[23] && (
+                                    <ListCart
+                                        images={products[23].image}
+                                        name={products[23].name}
+                                    />
+                                )}
+                                {products[24] && (
+                                    <ListCart
+                                        images={products[24].image}
+                                        name={products[24].name}
+                                    />
+                                )}
+                                {products[25] && (
+                                    <ListCart
+                                        images={products[25].image}
+                                        name={products[25].name}
+                                    />
+                                )}
+                                {products[26] && (
+                                    <ListCart
+                                        images={products[26].image}
+                                        name={products[26].name}
+                                    />
+                                )}
+                                {products[27] && (
+                                    <ListCart
+                                        images={products[27].image}
+                                        name={products[27].name}
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>
@@ -104,25 +132,38 @@ const ModelButtonAllWatch = ({ onClose }) => {
                         </h1>
                         <div className="p-6 ">
                             <div className="mb-2">
-                                <CartComputer />
+                                {products[28] && (
+                                    <CartComputer
+                                        image={products[28].image}
+                                        des={products[28].des}
+                                    />
+                                )}
                             </div>
                             <div className="grid grid-cols-2 gap-2">
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
-                                <ListCart
-                                    images={images.watchGt5Pro}
-                                    name="HUAWEI WATCH D2"
-                                />
+                                {products[29] && (
+                                    <ListCart
+                                        images={products[29].image}
+                                        name={products[29].name}
+                                    />
+                                )}
+                                {products[30] && (
+                                    <ListCart
+                                        images={products[30].image}
+                                        name={products[30].name}
+                                    />
+                                )}
+                                {products[31] && (
+                                    <ListCart
+                                        images={products[31].image}
+                                        name={products[31].name}
+                                    />
+                                )}
+                                {products[32] && (
+                                    <ListCart
+                                        images={products[32].image}
+                                        name={products[32].name}
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>

@@ -7,28 +7,39 @@ import CartComputer from "../CartUI/CartComputer";
 import CartItemWatch from "../CartUI/CartItemWatch";
 import ButtonUI from "../ButtonUI/ButtonUI";
 import SlideCartLaptop from "../SlideUI/SlideCartLaptop";
+import { useProducts } from "../../../../api/WearablesAPI";
 const TabLaptops = () => {
+    const { laptops } = useProducts();
     return (
         <div className="bg-background">
             <div className="h-3/5">
-                <BannerItem
-                    title={"MateBook D 14"}
-                    buttonkp={<ButtonKPBasic title="Khám Phá" />}
-                    buttonmn={<ButtonMNBasic />}
-                    image={images.matebookD}
-                />
+                {laptops[1] && (
+                    <BannerItem
+                        title={laptops[1].title}
+                        buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                        buttonmn={<ButtonMNBasic />}
+                        image={laptops[1].images.anh1} // Lấy ảnh đầu tiên
+                    />
+                )}
             </div>
             <div>
                 <div>
-                    <ContentCart
-                        id="watch-ultimate"
-                        title="MateBook D Series"
-                        name="TalDat WATCH Ultimate"
-                    />
+                    {laptops[2] && (
+                        <ContentCart
+                            title={laptops[2].title}
+                            name={laptops[2].name}
+                            image={Object.values(laptops[2].images)}
+                        />
+                    )}
                 </div>
             </div>
             <div className="container mx-auto m-6 rounded-xl bg-white p-4 h-[340px]">
-                <CartComputer des="Tai nghe và đồng hồ - Hai trong Một Chống ồn cuộc gọi AI" />
+                {laptops[3] && (
+                    <CartComputer
+                        des={laptops[3].des}
+                        image={laptops[3].images.anh1}
+                    />
+                )}
             </div>
             <div className="grid grid-cols-2 gap-6 container mx-auto">
                 <CartItemWatch

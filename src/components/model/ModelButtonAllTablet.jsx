@@ -3,8 +3,8 @@ import ListCart from "../ui/CartUI/ListCart";
 import { useProducts } from "../../../api/WearablesAPI";
 
 // eslint-disable-next-line react/prop-types
-const ModelButtonAllAudio = ({ onClose }) => {
-    const { audios } = useProducts();
+const ModelButtonAllTablet = ({ onClose }) => {
+    const { tablets } = useProducts();
 
     return (
         <div
@@ -42,10 +42,10 @@ const ModelButtonAllAudio = ({ onClose }) => {
                             WATCH Ultimate Series
                         </h1>
                         <div>
-                            {audios[3] && (
+                            {tablets[4] && (
                                 <CartComputer
-                                    image={audios[3].images.anh1}
-                                    des={audios[3].des}
+                                    image={tablets[4].images.anh1}
+                                    des={tablets[4].des}
                                 />
                             )}
                         </div>
@@ -56,18 +56,18 @@ const ModelButtonAllAudio = ({ onClose }) => {
                         </h1>
                         <div className="grid grid-cols-2 gap-2 p-6">
                             <div className="bg-white rounded-lg p-4">
-                                {audios[1] && (
+                                {tablets[8] && (
                                     <ListCart
-                                        images={audios[1].images.anh1}
-                                        name={audios[1].name}
+                                        images={tablets[8].images.anh1}
+                                        name={tablets[8].name}
                                     />
                                 )}
                             </div>
                             <div className="bg-white rounded-lg p-4">
-                                {audios[4] && (
+                                {tablets[9] && (
                                     <ListCart
-                                        images={audios[4].images.anh1}
-                                        name={audios[4].name}
+                                        images={tablets[9].images.anh1}
+                                        name={tablets[9].name}
                                     />
                                 )}
                             </div>
@@ -79,51 +79,36 @@ const ModelButtonAllAudio = ({ onClose }) => {
                         </h1>
                         <div className="p-6 ">
                             <div className="mb-2">
-                                {audios[6] && (
+                                {tablets[10] && (
                                     <CartComputer
-                                        image={audios[6].images.anh1}
-                                        des={audios[6].des}
+                                        image={tablets[10].images.anh1}
+                                        des={tablets[10].des}
                                     />
                                 )}
                             </div>
                             <div className="grid grid-cols-2 gap-2">
-                                {audios[9] && (
+                                {tablets[11] && (
                                     <ListCart
-                                        images={audios[9].images.anh1}
-                                        name={audios[9].name}
+                                        images={tablets[11].images.anh1}
+                                        name={tablets[11].name}
                                     />
                                 )}
-                                {audios[12] && (
+                                {tablets[1] && (
                                     <ListCart
-                                        images={audios[12].images.anh1}
-                                        name={audios[12].name}
+                                        images={tablets[1].images.anh1}
+                                        name={tablets[1].name}
                                     />
                                 )}
-                                {audios[17] && (
+                                {tablets[2] && (
                                     <ListCart
-                                        images={audios[17].images.anh1}
-                                        name={audios[17].name}
+                                        images={tablets[2].images.anh1}
+                                        name={tablets[2].name}
                                     />
                                 )}
-                                {audios[14] && (
+                                {tablets[3] && (
                                     <ListCart
-                                        images={audios[14].images.anh1}
-                                        name={audios[14].name}
-                                    />
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className="text-colorText text-4xl flex align-center justify-center font-semibold mb-6 mt-10">
-                            WATCH GT Series
-                        </h1>
-                        <div className="p-6 ">
-                            <div className="mb-2">
-                                {audios[11] && (
-                                    <CartComputer
-                                        image={audios[11].images.anh1}
-                                        des={audios[11].des}
+                                        images={tablets[3].images.anh1}
+                                        name={tablets[3].name}
                                     />
                                 )}
                             </div>
@@ -135,4 +120,4 @@ const ModelButtonAllAudio = ({ onClose }) => {
     );
 };
 
-export default ModelButtonAllAudio;
+export default ModelButtonAllTablet;

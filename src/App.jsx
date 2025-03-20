@@ -2,13 +2,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Header from "./components/header/Header";
-import Home from "./components/pages/Home";
-import Wearables from "./components/pages/Wearables";
 import "./index.css";
 import Footer from "./components/footer/Footer";
-import ThietBiDeo from "./components/pages/Laptops";
-import MayTinhBan from "./components/pages/MayTinhBan";
-import Audio from "./components/pages/audio";
+import Laptop from "./components/pages/Laptops";
+import ParentWearable from "./components/pages/parentPages/ParentWearable";
+import ParentTaplet from "./components/pages/parentPages/ParentTaplet";
+import ParentAudio from "./components/pages/parentPages/ParentAudio";
+import ParentHome from "./components/pages/parentPages/ParentHome";
 
 function App() {
     const [headerHeight, setHeaderHeight] = useState(0);
@@ -27,23 +27,23 @@ function App() {
                 <Routes>
                     <Route
                         path="/vn"
-                        element={<Home headerHeight={headerHeight} />}
+                        element={<ParentHome headerHeight={headerHeight} />}
                     />
                     <Route
                         path="/vn/wearables"
-                        element={<Wearables headerHeight={headerHeight} />}
+                        element={<ParentWearable headerHeight={headerHeight} />}
                     />
                     <Route
                         path="/vn/laptops"
-                        element={<ThietBiDeo headerHeight={headerHeight} />}
+                        element={<Laptop headerHeight={headerHeight} />}
                     />
                     <Route
                         path="/vn/tablets"
-                        element={<MayTinhBan headerHeight={headerHeight} />}
+                        element={<ParentTaplet headerHeight={headerHeight} />}
                     />
                     <Route
                         path="/vn/audio"
-                        element={<Audio headerHeight={headerHeight} />}
+                        element={<ParentAudio headerHeight={headerHeight} />}
                     />
                 </Routes>
                 <Footer />

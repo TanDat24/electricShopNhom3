@@ -9,24 +9,29 @@ import ListCart from "../ui/CartUI/ListCart";
 import ButtonKPInter from "../ui/ButtonUI/ButoonKPInter";
 import CartItemWatch from "../ui/CartUI/CartItemWatch";
 import Note from "./layout/Note";
+import { useProducts } from "../../../api/WearablesAPI";
 
 // eslint-disable-next-line react/prop-types
 function Wearables({ headerHeight }) {
+    const { products } = useProducts();
+
     return (
         <div
-            className="bg-background"
+            className="bg-background pt-[3rem]"
             style={{
                 minHeight: `calc(100vh - ${headerHeight}px)`,
                 marginTop: `${headerHeight}px`,
             }}
         >
-            <BannerItem
-                title={"TalDat WATCH GT 5 Pro"}
-                describe={"Fashion Edge"}
-                buttonkp={<ButtonKPBasic title="Khám Phá" />}
-                buttonmn={<ButtonMNBasic />}
-                image={images.watchGt5Pro}
-            />
+            {products[1] && (
+                <BannerItem
+                    title={products[1].title}
+                    describe={products[1].des}
+                    buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                    buttonmn={<ButtonMNBasic />}
+                    image={products[1].image[0]} // Lấy ảnh đầu tiên
+                />
+            )}
             <div className="container mx-auto">
                 <h1 className="text-[50px] pt-[80px] pb-12 flex align-center justify-center font-semibold">
                     Chọn Thiết Bị Đeo Phù Hợp
@@ -65,82 +70,124 @@ function Wearables({ headerHeight }) {
                 </div>
             </div>
             <div>
-                <ContentCart
-                    id="watch-ultimate"
-                    title="WATCH Ultimate Series"
-                    des="Kiệt Tác Đỉnh Cao"
-                    name="TalDat WATCH Ultimate"
-                />
+                {products[2] && (
+                    <ContentCart
+                        id="watch-ultimate"
+                        title={products[2].title}
+                        des={products[2].des}
+                        name={products[2].name}
+                        image={products[2].image}
+                    />
+                )}
             </div>
             <div>
-                <ContentCart
-                    id="watch-series"
-                    title="WATCH Series"
-                    des="Công Nghệ Tiên Tiến"
-                    name="TalDat WATCH 4"
-                />
+                {products[3] && (
+                    <ContentCart
+                        id="watch-series"
+                        title={products[3].title}
+                        des={products[3].des}
+                        name={products[3].name}
+                        image={products[3].image}
+                    />
+                )}
                 <div className="container mx-auto m-6 rounded-xl bg-white p-4 h-[340px]">
-                    <CartComputer des="Tai nghe và đồng hồ - Hai trong Một Chống ồn cuộc gọi AI" />
+                    {products[4] && (
+                        <CartComputer
+                            des={products[4].des}
+                            image={products[4].image}
+                        />
+                    )}
                 </div>
             </div>
             <div>
-                <ContentCart
-                    id="watch-gt-series"
-                    title="WATCH GT Series"
-                    des="Cổ Điển Năng Động"
-                    name="TalDat WATCH GT 5 Pro"
-                />
+                {products[5] && (
+                    <ContentCart
+                        id="watch-series"
+                        title={products[5].title}
+                        des={products[5].des}
+                        name={products[5].name}
+                        image={products[5].image}
+                    />
+                )}
                 <div className="container mx-auto rounded-xl mt-4 pb-12">
                     <div className="grid grid-cols-12 gap-4 h-[340px]">
                         <div className="col-span-6 bg-white p-2 rounded-lg h-full">
-                            <CartComputer des="Tính Năng Chạy Bộ Và Đạp Xe Mới Thiết Kế Góc Cạnh" />
+                            {products[6] && (
+                                <CartComputer
+                                    des={products[6].des}
+                                    image={products[6].image}
+                                />
+                            )}
                         </div>
                         <div className="col-span-3 bg-white p-2 rounded-lg">
-                            <ListCart
-                                images={images.watchGt5Pro}
-                                name="TalDat WATCH GT 4"
-                                des1="Thiết Kế Thẩm Mỹ"
-                                des2="Theo Dõi Sức Khỏe Chuyên Nghiệp"
-                            />
+                            {products[7] && (
+                                <ListCart
+                                    images={products[7].image}
+                                    name={products[7].name}
+                                    des1={products[7].des}
+                                />
+                            )}
                         </div>
                         <div className="col-span-3 bg-white p-2 rounded-lg">
-                            <ListCart
-                                images={images.watchGt5Pro}
-                                name="TalDat WATCH GT 3 Pro Ceramic"
-                                des1="Gốm Tinh Thể Nano"
-                                des2="Phân Tích ECG"
-                            />
+                            {products[8] && (
+                                <ListCart
+                                    images={products[8].image}
+                                    name={products[8].name}
+                                    des1={products[8].des}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <ContentCart
-                    id="watch-fit-series"
-                    title="WATCH FIT Series"
-                    des="Thời Trang Xu Hướng"
-                    name="TalDat WATCH FIT 3"
-                />
+                {products[9] && (
+                    <ContentCart
+                        id="watch-series"
+                        title={products[9].title}
+                        des={products[9].des}
+                        name={products[9].name}
+                        image={products[9].image}
+                    />
+                )}
                 <div className="container mx-auto pb-12 pt-4">
                     <div className="grid grid-cols-2 gap-4 h-[340px]">
                         <div className="bg-white p-4 rounded-lg">
-                            <CartComputer des="Thiết Kế Thời Trang Và Chăm Sóc Sức Khỏe" />
+                            {products[10] && (
+                                <CartComputer
+                                    des={products[10].des}
+                                    image={products[10].image}
+                                />
+                            )}
                         </div>
                         <div className="bg-white p-4 rounded-lg">
-                            <CartComputer des="Thiết Kế Thời Trang Và Chăm Sóc Sức Khỏe" />
+                            {products[11] && (
+                                <CartComputer
+                                    des={products[11].des}
+                                    image={products[11].image}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <ContentCart
-                    id="healthKids-watch"
-                    title="Health & Kids Watch"
-                    des="Sức Khỏe Và Gia Đình"
-                    name="TalDat WATCH D2"
-                />
+                {products[12] && (
+                    <ContentCart
+                        id="watch-series"
+                        title={products[12].title}
+                        des={products[12].des}
+                        name={products[12].name}
+                        image={products[12].image}
+                    />
+                )}
                 <div className="container mx-auto m-6 rounded-xl bg-white p-4 h-[340px]">
-                    <CartComputer des="Tai nghe và đồng hồ - Hai trong Một Chống ồn cuộc gọi AI" />
+                    {products[13] && (
+                        <CartComputer
+                            des={products[13].des}
+                            image={products[13].image}
+                        />
+                    )}
                 </div>
             </div>
             <div className="container mx-auto">
@@ -149,28 +196,36 @@ function Wearables({ headerHeight }) {
                 </h1>
                 <div className="grid grid-cols-4 gap-4 pb-6 h-[460px] pb-12">
                     <div className="bg-white p-4 rounded-lg">
-                        <ListCart
-                            images={images.watchGt5Pro}
-                            name="TalDat WATCH Ultimate"
-                        />
+                        {products[14] && (
+                            <ListCart
+                                images={products[14].image}
+                                name={products[14].name}
+                            />
+                        )}
                     </div>
                     <div className="bg-white p-4 rounded-lg">
-                        <ListCart
-                            images={images.watchGt5Pro}
-                            name="TalDat WATCH GT 5 Pro"
-                        />
+                        {products[15] && (
+                            <ListCart
+                                images={products[15].image}
+                                name={products[15].name}
+                            />
+                        )}
                     </div>
                     <div className="bg-white p-4 rounded-lg">
-                        <ListCart
-                            images={images.watchGt5Pro}
-                            name="TalDat WATCH FIT 3"
-                        />
+                        {products[16] && (
+                            <ListCart
+                                images={products[16].image}
+                                name={products[16].name}
+                            />
+                        )}
                     </div>
                     <div className="bg-white p-4 rounded-lg">
-                        <ListCart
-                            images={images.watchGt5Pro}
-                            name="TalDat WATCH D2"
-                        />
+                        {products[17] && (
+                            <ListCart
+                                images={products[17].image}
+                                name={products[17].name}
+                            />
+                        )}
                     </div>
                 </div>
                 <div className="w-full flex align-center justify-center">
@@ -223,7 +278,9 @@ function Wearables({ headerHeight }) {
                     Ứng Dụng TalDat Health
                 </h1>
             </div>
-            <div><Note page="Thiết Bị Đeo"/></div>
+            <div>
+                <Note page="Thiết Bị Đeo" />
+            </div>
         </div>
     );
 }

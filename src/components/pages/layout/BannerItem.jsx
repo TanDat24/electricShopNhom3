@@ -1,5 +1,12 @@
 // eslint-disable-next-line react/prop-types
-const BannerItem = ({ title, describe, image, buttonkp, buttonmn }) => {
+const BannerItem = ({
+    title,
+    describe,
+    image,
+    buttonkp,
+    buttonmn,
+    isHalfCol = false,
+}) => {
     return (
         <div className=" w-full h-full bg-white rounded-lg">
             <div className="flex flex-col items-center space-y-4">
@@ -17,7 +24,10 @@ const BannerItem = ({ title, describe, image, buttonkp, buttonmn }) => {
                     <img
                         src={image}
                         alt="watchGt5Pro"
-                        className="w-[1024px] cursor-pointer pb-[4px]"
+                        className={`${
+                            isHalfCol ? "w-[512px]" : "w-[1024px]"
+                        } cursor-pointer pb-[4px]`}
+                        loading="lazy"
                     />
                 </div>
             </div>
