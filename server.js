@@ -3,14 +3,17 @@ import fs from "fs";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+import multer from "multer";
 
 // Chuyển đổi __dirname trong ES Module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-app.use(express.json());
+// app.use(express.json());
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const dataFilePath = path.join(__dirname, "src/assets/Data/data.json");
 
@@ -29,9 +32,6 @@ const writeData = (data) => {
     fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 };
 
-<<<<<<< Updated upstream
-// API xử lý đăng ký tài khoản
-=======
 // Cấu hình multer để lưu ảnh vào thư mục uploads/
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -67,31 +67,22 @@ const upload = multer({ storage: storage });
 //     res.json({ message: "Đăng ký thành công!", user: newUser });
 // });
 
->>>>>>> Stashed changes
 app.post("/signup", (req, res) => {
     const users = readData();
     const { name, email, phone, address, password } = req.body;
-
     // Kiểm tra email đã tồn tại chưa
     if (users.some((user) => user.email === email)) {
         return res.status(400).json({ message: "Email đã tồn tại!" });
     }
 
-<<<<<<< Updated upstream
-    // Tạo user mới (Không có confirmPassword)
-    const newUser = { name, email, phone, address, password, role };
-=======
     // Tạo user mới với vai trò mặc định là "admin"
     const newUser = { name, email, phone, address, password, role: "Khách hàng", avatar: null };
->>>>>>> Stashed changes
     users.push(newUser);
     writeData(users);
 
     res.json({ message: "Đăng ký thành công!", user: newUser });
 });
 
-<<<<<<< Updated upstream
-=======
 // API cập nhật ảnh đại diện
 app.post("/update-avatar", upload.single("avatar"), (req, res) => {
     const users = readData();
@@ -143,7 +134,6 @@ app.post("/update-profile", upload.single("avatar"), (req, res) => {
     // Nếu có ảnh mới, cập nhật avatar
     if (req.file) {
         const avatarPath = `/uploads/${req.file.filename}`;
-
         // Xóa ảnh cũ nếu có
         const oldAvatar = users[userIndex].avatar;
         if (oldAvatar) {
@@ -165,7 +155,6 @@ app.post("/update-profile", upload.single("avatar"), (req, res) => {
 // Cho phép truy cập ảnh từ thư mục uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
->>>>>>> Stashed changes
 // Chạy server
 const PORT = 5000;
 app.listen(PORT, () => {

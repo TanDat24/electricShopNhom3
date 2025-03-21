@@ -14,7 +14,7 @@ const UserProfile = () => {
     });
     const [avatarPreview, setAvatarPreview] = useState(null);
     const [loading, setLoading] = useState(true);
-
+    const [selectedFile, setSelectedFile] = useState(null);
     // Lấy email từ localStorage
     // console.log("All localStorage keys:", Object.keys(localStorage));
     // console.log("userEmail trong localStorage:", localStorage.getItem("user"));
@@ -44,15 +44,14 @@ const UserProfile = () => {
                 username: user.email.split("@")[0],
                 name: user.name,
                 email: user.email,
-                phone: user.phone.replace(/(\d{3})\d{4}(\d{3})/, "$1****$2"),
+                // phone: user.phone.replace(/(\d{3})\d{4}(\d{3})/, "$1****$2"),
                 address: user.address,
+                phone: user.phone,  // Giữ nguyên số gốc
+                // displayedPhone: user.phone.replace(/(\d{3})\d{4}(\d{3})/, "$1****$2"),
                 role: user.role,
-<<<<<<< Updated upstream
-                avatar: null,
-=======
                 avatar: user.avatar || "",
->>>>>>> Stashed changes
             });
+            setAvatarPreview(user.avatar || null);
         } else {
             console.error("Không tìm thấy user!");
         }
@@ -81,7 +80,7 @@ const UserProfile = () => {
             alert("Dung lượng file tối đa 1MB!");
             return;
         }
-
+        setSelectedFile(file);
         const reader = new FileReader();
         reader.onloadend = () => {
             setAvatarPreview(reader.result);
@@ -92,14 +91,6 @@ const UserProfile = () => {
         };
         reader.readAsDataURL(file);
     };
-
-<<<<<<< Updated upstream
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Updated data:", formData);
-    };
-
-=======
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -136,13 +127,13 @@ const UserProfile = () => {
         }
     };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-    };
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormData((prevData) => ({
+    //         ...prevData,
+    //         [name]: value,
+    //     }));
+    // };
 
     const [isPhoneEditable, setIsPhoneEditable] = useState(false);
 
@@ -150,7 +141,6 @@ const UserProfile = () => {
         setIsPhoneEditable(true);
     };
 
->>>>>>> Stashed changes
     return (
         <div className="flex justify-center items-start gap-8 p-8 mt-20">
             {/* Sidebar upload ảnh */}
@@ -251,6 +241,7 @@ const UserProfile = () => {
                             pattern="[0-9]{10}"
                             required
                         />
+
 
                     </div>
 
