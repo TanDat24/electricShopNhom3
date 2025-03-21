@@ -1,9 +1,11 @@
 import ButtonKPBasic from "../ButtonUI/ButtonKPBasic";
 import { images } from "../../../assets/image";
+import { useProducts } from "../../../../api/WearablesAPI";
 
-// Change props destructuring from parentheses to curly braces
 // eslint-disable-next-line react/prop-types
 const CartLg = ({ index, title, describe }) => {
+    const { products } = useProducts();
+
     const getButtonTitle = (index) => {
         switch (index) {
             case 1:
@@ -12,6 +14,21 @@ const CartLg = ({ index, title, describe }) => {
                 return "Xem tất cả máy tính bảng";
             case 3:
                 return "Xem tất cả tai nghe và loa";
+            default:
+                return "";
+        }
+    };
+
+    const getCategory = (index) => {
+        switch (index) {
+            case 1:
+                return "wearables"; // Đường dẫn: /vn/wearables/product-detail
+            case 2:
+                return "tablets"; // Đường dẫn: /vn/tablets/product-detail
+            case 3:
+                return "audio";
+            case 4:
+                return "laptops"; // Đường dẫn: /vn/audio/product-detail
             default:
                 return "";
         }
@@ -41,7 +58,11 @@ const CartLg = ({ index, title, describe }) => {
                 {title}
             </h1>
             <p className="pl-4 pb-4">{describe}</p>
-            <ButtonKPBasic title={getButtonTitle(index)} />
+            <ButtonKPBasic
+                title={getButtonTitle(index)}
+                productId={products[8]?.id || "default-id"} // Kiểm tra xem sản phẩm có tồn tại không
+                category={getCategory(index)}
+            />
         </div>
     );
 };
