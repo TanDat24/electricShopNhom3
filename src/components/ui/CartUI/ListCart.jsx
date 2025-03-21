@@ -16,8 +16,14 @@ const ListCart = ({ images, name, des1, des2 }) => (
                 <li>{des2}</li>
             </ul>
             <div className="flex items-center justify-center mt-2">
-                <ButtonUI title="Khám Phá" type="khampham" />
-                <ButtonUI title="Mua ngay" type="muangay" />
+                {/* <ButtonUI title="Khám Phá" type="khampham" /> */}
+                <ButtonUI
+                    title="Khám Phá"
+                    type="khampham"
+                    category="wearables"
+                    productId="456"
+                />
+                <ButtonUI title="Mau ngay" type="khampham" />
             </div>
         </div>
     </div>

@@ -1,36 +1,46 @@
 import { useState } from "react";
-import ModelButtonAllAudio from "../../model/ModelButtonAllAudio";
-import ModelButtonAllWatch from "../../model/ModelButtonAllWatch";
+import ParentComponent from "../../model/ParentComponent ";
+import { useNavigate } from "react-router-dom";
 
 const ButtonKPInter = ({
-    // eslint-disable-next-line react/prop-types
     title,
-    // eslint-disable-next-line react/prop-types
+    productId,
+    category,
     icon = false,
-    // eslint-disable-next-line react/prop-types
     audio = false,
-    // eslint-disable-next-line react/prop-types
     watch = false,
-    // eslint-disable-next-line react/prop-types
-    link = "/",
+    tablet = false,
 }) => {
-    const [showAudioModal, setShowAudioModal] = useState(false);
-    const [showWatchModal, setShowWatchModal] = useState(false);
+    const [showModal, setShowModal] = useState(null);
+    const navigate = useNavigate();
 
     const handleClick = () => {
         if (audio) {
-            setShowAudioModal(true);
+            setShowModal("audio");
         } else if (watch) {
-            setShowWatchModal(true);
+            setShowModal("watch");
+        } else if (tablet) {
+            setShowModal("tablet");
+        }
+    };
+
+    const handleButtonClick = () => {
+        const path = `/vn/${category}/product-detail/${productId}`;
+        navigate(path);
+    };
+
+    const combinedHandleClick = () => {
+        if (icon) {
+            handleClick();
         } else {
-            window.location.href = link;
+            handleButtonClick();
         }
     };
 
     return (
         <>
             <button
-                onClick={handleClick}
+                onClick={combinedHandleClick}
                 className="text-[14px] mx-3 my-2 p-[14px] w-1/2 bg-colorText text-white font-bold rounded-lg hover:bg-darkBlue flex items-center justify-center gap-2 group"
             >
                 {title}
@@ -52,12 +62,11 @@ const ButtonKPInter = ({
                 )}
             </button>
 
-            {showAudioModal && (
-                <ModelButtonAllAudio onClose={() => setShowAudioModal(false)} />
-            )}
-
-            {showWatchModal && (
-                <ModelButtonAllWatch onClose={() => setShowWatchModal(false)} />
+            {showModal && (
+                <ParentComponent
+                    type={showModal}
+                    onClose={() => setShowModal(null)}
+                />
             )}
         </>
     );
