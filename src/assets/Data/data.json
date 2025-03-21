@@ -11,9 +11,14 @@
     "email": "user2@example.com",
     "password": "abcdef",
     "name": "Trần Thị B",
-    "phone": "0987654321",
+    "phone": "0987654327",
     "address": "TP.HCM, Việt Nam",
+<<<<<<< Updated upstream
     "role": "Quản trị viên"
+=======
+    "role": "Quản trị viên",
+    "avatar": "/uploads/1742578841376-475191769.jpg"
+>>>>>>> Stashed changes
   },
   {
     "email": "user3@example.com",
@@ -29,6 +34,30 @@
     "name": "Ngô Trần Văn Điềm",
     "phone": "0398752911",
     "address": "TPHCM",
+<<<<<<< Updated upstream
     "role": "Nhân viên"
+=======
+    "password": "123456",
+    "role": "Nhân viên",
+    "avatar": "/uploads/1742563847692-615974449.png"
+  },
+  {
+    "name": "Cao Thành Đông",
+    "email": "dongcao123@gmail.com",
+    "phone": "0966666666",
+    "address": "Canada",
+    "password": "9999",
+    "role": "Nhân viên",
+    "avatar": "/uploads/1742579015765-572444181.jpg"
+  },
+  {
+    "name": "HoangViruss",
+    "email": "virus@gmail.com",
+    "phone": "0633333333",
+    "address": "Hàn Quốc",
+    "password": "123123123",
+    "role": "Khách hàng",
+    "avatar": null
+>>>>>>> Stashed changes
   }
 ]

@@ -47,7 +47,11 @@ const UserProfile = () => {
                 phone: user.phone.replace(/(\d{3})\d{4}(\d{3})/, "$1****$2"),
                 address: user.address,
                 role: user.role,
+<<<<<<< Updated upstream
                 avatar: null,
+=======
+                avatar: user.avatar || "",
+>>>>>>> Stashed changes
             });
         } else {
             console.error("Không tìm thấy user!");
@@ -89,11 +93,64 @@ const UserProfile = () => {
         reader.readAsDataURL(file);
     };
 
+<<<<<<< Updated upstream
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Updated data:", formData);
     };
 
+=======
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const formDataToSend = new FormData();
+        formDataToSend.append("email", formData.email);
+        formDataToSend.append("name", formData.name);
+        formDataToSend.append("phone", formData.phone);
+        formDataToSend.append("address", formData.address);
+
+        if (selectedFile) {
+            formDataToSend.append("avatar", selectedFile);
+        }
+
+        try {
+            const response = await fetch("http://localhost:5000/update-profile", {
+                method: "POST",
+                body: formDataToSend,
+            });
+
+            if (!response.ok) throw new Error("Lỗi cập nhật thông tin");
+
+            const result = await response.json();
+            alert("Thông tin đã được cập nhật!");
+            if (selectedFile) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setAvatarPreview(reader.result);
+                };
+                reader.readAsDataURL(selectedFile);
+            }
+        } catch (error) {
+            alert("Lỗi khi cập nhật: " + error.message);
+        }
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const [isPhoneEditable, setIsPhoneEditable] = useState(false);
+
+    const handleEnablePhoneEdit = () => {
+        setIsPhoneEditable(true);
+    };
+
+>>>>>>> Stashed changes
     return (
         <div className="flex justify-center items-start gap-8 p-8 mt-20">
             {/* Sidebar upload ảnh */}
@@ -178,19 +235,23 @@ const UserProfile = () => {
                             <button
                                 type="button"
                                 className="text-red-500 text-sm hover:text-red-600 transition-colors"
+                                onClick={handleEnablePhoneEdit}
                             >
                                 Cập nhật số mới
                             </button>
+
                         </div>
                         <input
                             type="tel"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full border-b pb-2 focus:outline-none focus:border-red-500"
+                            className={`w-full border-b pb-2 focus:outline-none ${isPhoneEditable ? 'focus:border-red-500' : 'bg-gray-50 text-gray-500 cursor-not-allowed'}`}
+                            disabled={!isPhoneEditable}
                             pattern="[0-9]{10}"
                             required
                         />
+
                     </div>
 
                     <div className="mb-4">
@@ -214,9 +275,9 @@ const UserProfile = () => {
                             className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
                             disabled
                         >
-                            <option value="admin">Quản trị viên</option>
-                            <option value="staff">Nhân viên</option>
-                            <option value="customer">Khách hàng</option>
+                            <option value="Khách hàng">Khách hàng</option>
+                            <option value="Quản trị viên">Quản trị viên</option>
+                            <option value="Nhân viên">Nhân viên</option>
                         </select>
                     </div>
                 </div>
