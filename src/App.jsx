@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Header from "./components/header/Header";
 import Login from "./components/pages/Login";
@@ -14,6 +14,7 @@ import ParentHome from "./components/pages/parentPages/ParentHome";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 
 function App() {
+    const [headerHeight, setHeaderHeight] = useState(0);
     const [user, setUser] = useState(null);
 
     // Lấy user từ localStorage khi tải lại trang
@@ -33,7 +34,6 @@ function App() {
     return (
         <Router>
             <div>
-
                 <Header onHeaderHeightChange={setHeaderHeight} />
                 <nav>
                     <Link to="/vn"></Link>
@@ -63,15 +63,20 @@ function App() {
                         path="/vn/audio"
                         element={<ParentAudio headerHeight={headerHeight} />}
                     />
-                    <Route path="/vn/login" element={<Login setUser={setUser} />} />
+                    <Route
+                        path="/vn/login"
+                        element={<Login setUser={setUser} />}
+                    />
                     <Route path="/vn/signup" element={<Signup />} />
-                    <Route path="/vn/profile" element={<UserProfile user={user} />} />
+                    <Route
+                        path="/vn/profile"
+                        element={<UserProfile user={user} />}
+                    />
                     {/* Route cho từng loại sản phẩm */}
                     <Route
                         path="/vn/:category/product-detail/:productId"
                         element={<ProductDetail />}
                     />
-
                 </Routes>
 
                 <Footer />
