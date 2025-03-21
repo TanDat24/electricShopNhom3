@@ -34,7 +34,7 @@ function App() {
     return (
         <Router>
             <div>
-                <Header onHeaderHeightChange={setHeaderHeight} />
+                <Header onHeaderHeightChange={setHeaderHeight} user={user} handleLogout={handleLogout} />
                 <nav>
                     <Link to="/vn"></Link>
                     <Link to="/vn/wearables"></Link>
