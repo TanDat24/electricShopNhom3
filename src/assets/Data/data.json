@@ -3,9 +3,10 @@
     "email": "test@example.com",
     "password": "123456",
     "name": "Nguyễn Văn A",
-    "phone": "0123456789",
-    "address": "Hà Nội, Việt Nam",
-    "role": "Khách hàng"
+    "phone": "0212123654",
+    "address": "Hà Nội",
+    "role": "Khách hàng",
+    "avatar": "/uploads/1742564431498-10634296.png"
   },
   {
     "email": "user2@example.com",
@@ -13,7 +14,8 @@
     "name": "Trần Thị B",
     "phone": "0987654321",
     "address": "TP.HCM, Việt Nam",
-    "role": "Quản trị viên"
+    "role": "Quản trị viên",
+    "avatar": null
   },
   {
     "email": "user3@example.com",
@@ -21,7 +23,8 @@
     "name": "Phạm Văn C",
     "phone": "0912345678",
     "address": "Đà Nẵng, Việt Nam",
-    "role": "Nhân viên"
+    "role": "Nhân viên",
+    "avatar": null
   },
   {
     "name": "Ngô Trần Văn Điềm",
@@ -29,6 +32,7 @@
     "phone": "0398752911",
     "address": "TPHCM",
     "password": "123456",
-    "role": "Nhân viên"
+    "role": "Nhân viên",
+    "avatar": "/uploads/1742563847692-615974449.png"
   }
 ]

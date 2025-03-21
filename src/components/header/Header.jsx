@@ -8,32 +8,28 @@ import Search from "./Search";
 import Cart from "./Cart";
 
 // eslint-disable-next-line react/prop-types
-const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
+const Header = ({ onHeaderHeightChange = () => {}, user, handleLogout }) => {
     const headerRef = useRef(null);
     const [headerHeight, setHeaderHeight] = useState(0);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         if (headerRef.current) {
-            setHeaderHeight(headerRef.current.offsetHeight);
+            const height = headerRef.current.offsetHeight;
+            setHeaderHeight(height);
+            onHeaderHeightChange(height);
         }
-    }, []);
 
-    useEffect(() => {
-        if (headerRef.current) {
-            onHeaderHeightChange(headerRef.current.offsetHeight);
-        }
-    }, [onHeaderHeightChange]);
-
-    useEffect(() => {
         const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            setIsScrolled(scrollPosition > 0);
+            setIsScrolled(window.scrollY > 0);
         };
 
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [onHeaderHeightChange]);
+
     return (
         <>
             <header
@@ -45,7 +41,7 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
                             : "bg-header"
                     }`}
             >
-                <div className="container mx-auto pt-2 pb-2 ">
+                <div className="container mx-auto pt-2 pb-2">
                     <div className="justify-content-md-center">
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
@@ -62,25 +58,30 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
                                         TalDat
                                     </h2>
                                 </Link>
-                                <div>
-                                    <ul className="cursor-pointer flex m-0 space-x-7.5 text-base font-semibold text-colorText">
+                                <ul className="cursor-pointer flex m-0 space-x-7.5 text-base font-semibold text-colorText">
+                                    <NavItem>
                                         <Link to="/vn/wearables">
-                                            <NavItem>Thiết Bị Đeo</NavItem>
+                                            Thiết Bị Đeo
                                         </Link>
-
+                                    </NavItem>
+                                    <NavItem>
                                         <Link to="/vn/laptops">
-                                            <NavItem>Máy Tính Xách Tay</NavItem>
+                                            Máy Tính Xách Tay
                                         </Link>
+                                    </NavItem>
+                                    <NavItem>
                                         <Link to="/vn/tablets">
-                                            <NavItem>Máy Tính Bảng</NavItem>
+                                            Máy Tính Bảng
                                         </Link>
+                                    </NavItem>
+                                    <NavItem>
                                         <Link to="/vn/audio">
-                                            <NavItem>Tai Nghe và Loa</NavItem>
+                                            Tai Nghe và Loa
                                         </Link>
-                                        <NavItem>Phụ Kiện</NavItem>
-                                        <NavItem>EMUI</NavItem>
-                                    </ul>
-                                </div>
+                                    </NavItem>
+                                    <NavItem>Phụ Kiện</NavItem>
+                                    <NavItem>EMUI</NavItem>
+                                </ul>
                             </div>
 
                             <div className="flex items-center justify-end">
@@ -96,12 +97,11 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
                                                 to="/vn/profile"
                                                 className="text-lg font-semibold text-blue-600 hover:underline"
                                             >
-                                                {/*  eslint-disable-next-line react/prop-types */}
                                                 {user.name}
                                             </Link>
                                             <button
                                                 onClick={handleLogout}
-                                                className="bg-red-500 text-white px-3 py-1 rounded"
+                                                className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 transition duration-200"
                                             >
                                                 Đăng xuất
                                             </button>
@@ -109,7 +109,7 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
                                     ) : (
                                         <Link
                                             to="/vn/login"
-                                            className="bg-blue-500 text-white px-4 py-1 rounded"
+                                            className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition duration-200"
                                         >
                                             Đăng nhập
                                         </Link>

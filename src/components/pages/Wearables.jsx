@@ -35,7 +35,7 @@ function Wearables({ headerHeight }) {
             />
           }
           buttonmn={<ButtonMNBasic />}
-          image={products[1].image[0]} // Lấy ảnh đầu tiên
+          image={products[1].image?.[0]} // Lấy ảnh đầu tiên
         />
       )}
       <div className="container mx-auto">
