@@ -5,11 +5,10 @@ import { images } from "../../assets/image";
 
 import NavItem from "../ui/NavItem";
 import Search from "./Search";
-import Profile from "./Profile";
 import Cart from "./Cart";
 
 // eslint-disable-next-line react/prop-types
-const Header = ({ onHeaderHeightChange }) => {
+const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
     const headerRef = useRef(null);
     const [headerHeight, setHeaderHeight] = useState(0);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -91,7 +90,30 @@ const Header = ({ onHeaderHeightChange }) => {
                                 <div className="flex items-center pl-10 cursor-pointer">
                                     <Cart />
                                     <Search headerHeight={headerHeight} />
-                                    <Profile />
+                                    {user ? (
+                                        <div className="flex items-center space-x-4">
+                                            <Link
+                                                to="/vn/profile"
+                                                className="text-lg font-semibold text-blue-600 hover:underline"
+                                            >
+                                                {/*  eslint-disable-next-line react/prop-types */}
+                                                {user.name}
+                                            </Link>
+                                            <button
+                                                onClick={handleLogout}
+                                                className="bg-red-500 text-white px-3 py-1 rounded"
+                                            >
+                                                Đăng xuất
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            to="/vn/login"
+                                            className="bg-blue-500 text-white px-4 py-1 rounded"
+                                        >
+                                            Đăng nhập
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
                         </div>
