@@ -44,7 +44,7 @@ const ModelButtonAllWatch = ({ onClose }) => {
                         <div>
                             {products[18] && (
                                 <CartComputer
-                                    image={products[18].image}
+                                    image={products[18].images.anh1}
                                     des={products[18].des}
                                 />
                             )}
@@ -58,7 +58,7 @@ const ModelButtonAllWatch = ({ onClose }) => {
                             <div className="bg-white rounded-lg p-4">
                                 {products[19] && (
                                     <ListCart
-                                        images={products[19].image}
+                                        images={products[19].images.anh1}
                                         name={products[19].name}
                                     />
                                 )}
@@ -66,7 +66,7 @@ const ModelButtonAllWatch = ({ onClose }) => {
                             <div className="bg-white rounded-lg p-4">
                                 {products[20] && (
                                     <ListCart
-                                        images={products[20].image}
+                                        images={products[20].images.anh1}
                                         name={products[20].name}
                                     />
                                 )}
@@ -81,7 +81,7 @@ const ModelButtonAllWatch = ({ onClose }) => {
                             <div className="mb-2">
                                 {products[21] && (
                                     <CartComputer
-                                        image={products[21].image}
+                                        image={products[21].images.anh1}
                                         des={products[21].des}
                                     />
                                 )}
@@ -89,37 +89,37 @@ const ModelButtonAllWatch = ({ onClose }) => {
                             <div className="grid grid-cols-2 gap-2">
                                 {products[22] && (
                                     <ListCart
-                                        images={products[22].image}
+                                        images={products[22].images.anh1}
                                         name={products[22].name}
                                     />
                                 )}
                                 {products[23] && (
                                     <ListCart
-                                        images={products[23].image}
+                                        images={products[23].images.anh1}
                                         name={products[23].name}
                                     />
                                 )}
                                 {products[24] && (
                                     <ListCart
-                                        images={products[24].image}
+                                        images={products[24].images.anh1}
                                         name={products[24].name}
                                     />
                                 )}
                                 {products[25] && (
                                     <ListCart
-                                        images={products[25].image}
+                                        images={products[25].images.anh1}
                                         name={products[25].name}
                                     />
                                 )}
                                 {products[26] && (
                                     <ListCart
-                                        images={products[26].image}
+                                        images={products[26].images.anh1}
                                         name={products[26].name}
                                     />
                                 )}
                                 {products[27] && (
                                     <ListCart
-                                        images={products[27].image}
+                                        images={products[27].images.anh1}
                                         name={products[27].name}
                                     />
                                 )}
@@ -134,7 +134,7 @@ const ModelButtonAllWatch = ({ onClose }) => {
                             <div className="mb-2">
                                 {products[28] && (
                                     <CartComputer
-                                        image={products[28].image}
+                                        image={products[28].images.anh1}
                                         des={products[28].des}
                                     />
                                 )}
@@ -142,25 +142,25 @@ const ModelButtonAllWatch = ({ onClose }) => {
                             <div className="grid grid-cols-2 gap-2">
                                 {products[29] && (
                                     <ListCart
-                                        images={products[29].image}
+                                        images={products[29].images.anh1}
                                         name={products[29].name}
                                     />
                                 )}
                                 {products[30] && (
                                     <ListCart
-                                        images={products[30].image}
+                                        images={products[30].images.anh1}
                                         name={products[30].name}
                                     />
                                 )}
                                 {products[31] && (
                                     <ListCart
-                                        images={products[31].image}
+                                        images={products[31].images.anh1}
                                         name={products[31].name}
                                     />
                                 )}
                                 {products[32] && (
                                     <ListCart
-                                        images={products[32].image}
+                                        images={products[32].images.anh1}
                                         name={products[32].name}
                                     />
                                 )}
