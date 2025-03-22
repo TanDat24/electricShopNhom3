@@ -1,6 +1,6 @@
 import ButtonUI from "../ButtonUI/ButtonUI";
 // eslint-disable-next-line react/prop-types
-const ListCart = ({ images, name, des1, des2 }) => (
+const ListCart = ({ images, name, des1, des2, productId, category }) => (
     <div className="w-full bg-white rounded-md flex flex-col">
         <div className="flex items-center justify-center flex-1">
             <img
@@ -20,8 +20,9 @@ const ListCart = ({ images, name, des1, des2 }) => (
                 <ButtonUI
                     title="Khám Phá"
                     type="khampham"
-                    category="wearables"
-                    productId="456"
+                    category={category}
+                    // productId="456"
+                    productId={productId}
                 />
                 <ButtonUI title="Mau ngay" type="khampham" />
             </div>

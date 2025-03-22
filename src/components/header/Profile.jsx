@@ -2,6 +2,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+// eslint-disable-next-line react/prop-types
 const Profile = ({ user, setUser }) => {
     const navigate = useNavigate();
 

@@ -1,23 +1,72 @@
 import React, { useState, useEffect } from "react";
-import userList from "../../assets/Data/data.json";
 
 const UserProfile = () => {
-    const [selectedFile, setSelectedFile] = useState(null);
-    const [avatarPreview, setAvatarPreview] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [userEmail, setUserEmail] = useState("");
     const [formData, setFormData] = useState({
+        username: "",
         name: "",
         email: "",
         phone: "",
-        address: "",
-        role: "",
-        avatar: "",
+        role: "user",
+        avatar: null
     });
 
+    const [avatarPreview, setAvatarPreview] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        const userJson = localStorage.getItem("user");
-        let currentUser = null;
+        setTimeout(() => {
+            const mockData = {
+                username: "",
+                name: "",
+                email: "",
+                phone: "",
+                role: "",
+                avatar: null
+            };
+
+            setFormData(mockData);
+            setLoading(false);
+        }, 1000);
+    }, []);
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleAvatarChange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        if (!file.type.match(/image\/(jpeg|png)/)) {
+            alert('Chỉ chấp nhận file JPEG hoặc PNG!');
+            return;
+        }
+
+        if (file.size > 1024 * 1024) {
+            alert('Dung lượng file tối đa 1MB!');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setAvatarPreview(reader.result);
+            setFormData(prev => ({
+                ...prev,
+                avatar: reader.result
+            }));
+        };
+        reader.readAsDataURL(file);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Updated data:', formData);
+    };
+
+    if (loading) return <div className="text-center p-20">Đang tải dữ liệu...</div>;
 
         if (userJson) {
             try {
@@ -124,8 +173,14 @@ const UserProfile = () => {
                             )}
                         </div>
                     </div>
+
                     <label className="cursor-pointer mb-2">
-                        <input type="file" className="hidden" accept="image/jpeg, image/png" onChange={handleAvatarChange} />
+                        <input
+                            type="file"
+                            className="hidden"
+                            accept="image/jpeg, image/png"
+                            onChange={handleAvatarChange}
+                        />
                         <div className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors">
                             Chọn ảnh mới
                         </div>
@@ -136,6 +191,7 @@ const UserProfile = () => {
                     </div>
                 </div>
             </div>
+
 
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6 flex-1 max-w-2xl">
                 <h2 className="text-xl font-bold text-gray-700 mb-2">Hồ Sơ Người Dùng</h2>
@@ -202,6 +258,7 @@ const UserProfile = () => {
                             onChange={handleChange}
                             className="w-full border-b pb-2 focus:outline-none focus:border-red-500"
                             required
+
                         />
                     </div>
 

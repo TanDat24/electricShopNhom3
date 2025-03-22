@@ -15,7 +15,13 @@ const TabMonitor = () => {
                 {laptops[4] && (
                     <BannerItem
                         title={laptops[4].title}
-                        buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                        buttonkp={
+                            <ButtonKPBasic
+                                title="Khám Phá"
+                                category="laptops"
+                                productId={laptops[4].id}
+                            />
+                        }
                         buttonmn={<ButtonMNBasic />}
                         image={laptops[4].images.anh1} // Lấy ảnh đầu tiên
                     />
@@ -27,6 +33,8 @@ const TabMonitor = () => {
                         title={laptops[5].title}
                         name={laptops[5].name}
                         image={Object.values(laptops[5].images)}
+                        category="laptops"
+                        productId={laptops[5].id}
                     />
                 )}
                 {laptops[6] && (
@@ -34,6 +42,8 @@ const TabMonitor = () => {
                         title={laptops[6].title}
                         name={laptops[6].name}
                         image={Object.values(laptops[6].images)}
+                        category="laptops"
+                        productId={laptops[6].id}
                     />
                 )}
             </div>
