@@ -10,7 +10,7 @@ import { useProducts } from "../../../api/WearablesAPI";
 // eslint-disable-next-line react/prop-types
 const Home = ({ headerHeight }) => {
     const [activeTab, setActiveTab] = useState(1);
-    const { products, tablets, audios } = useProducts();
+    const { products, tablets, audios, laptops } = useProducts();
     return (
         <div
             className="bg-background pt-[2rem]"
@@ -20,34 +20,49 @@ const Home = ({ headerHeight }) => {
             }}
         >
             <div className="container mx-auto grid grid-cols-1 gap-2 pb-4">
-                {products[1] && (
+                {products[8] && (
                     <BannerItem
-                        title={products[1].title}
-                        describe={products[1].des}
+                        title={products[8].title}
+                        describe={products[8].des}
                         buttonkp={
                             <ButtonKPBasic
                                 title="Khám phá"
-                                productId={products[1].name} // Truyền `id` thay vì `name`
+                                productId={products[8].id} // Truyền `id` thay vì `name`
                                 category="wearables"
                             />
                         }
                         buttonmn={<ButtonMNBasic />}
-                        image={products[1].image[0]} // Lấy ảnh đầu tiên
+                        image={products[8].images.anh1} // Lấy ảnh đầu tiên
                     />
                 )}
-                {tablets[1] && (
+                {products[9] && (
                     <BannerItem
-                        title={tablets[1].title}
-                        describe={tablets[1].des}
+                        title={products[9].title}
+                        describe={products[9].des}
                         buttonkp={
                             <ButtonKPBasic
                                 title="Khám phá"
-                                productId={tablets[1].name}
+                                productId={products[9].id} // Truyền `id` thay vì `name`
+                                category="wearables"
+                            />
+                        }
+                        buttonmn={<ButtonMNBasic />}
+                        image={products[9].images.anh1} // Lấy ảnh đầu tiên
+                    />
+                )}
+                {tablets[4] && (
+                    <BannerItem
+                        title={tablets[4].title}
+                        describe={tablets[4].des}
+                        buttonkp={
+                            <ButtonKPBasic
+                                title="Khám phá"
+                                productId={tablets[4].id}
                                 category="tablets"
                             />
                         }
                         buttonmn={<ButtonMNBasic />}
-                        image={tablets[1].images.anh1} // Lấy ảnh đầu tiên
+                        image={tablets[4].images.anh1}
                     />
                 )}
             </div>
@@ -61,30 +76,30 @@ const Home = ({ headerHeight }) => {
                             buttonkp={
                                 <ButtonKPBasic
                                     title="Khám phá"
-                                    productId={products[8].name}
+                                    productId={products[8].id}
                                     category="wearable"
                                 />
                             }
                             buttonmn={<ButtonMNBasic />}
-                            image={products[8].image[0]} // Lấy ảnh đầu tiên
+                            image={products[8].images.anh1}
                         />
                     )}
                 </div>
                 <div className="w-full">
-                    {products[7] && (
+                    {laptops[8] && (
                         <BannerItem
                             isHalfCol={true}
-                            title={products[7].title}
-                            describe={products[7].des}
+                            title={laptops[8].title}
+                            describe={laptops[8].des}
                             buttonkp={
                                 <ButtonKPBasic
                                     title="Khám phá"
-                                    productId={products[7].name}
-                                    category="wearable"
+                                    productId={laptops[8].id}
+                                    category="laptops"
                                 />
                             }
                             buttonmn={<ButtonMNBasic />}
-                            image={products[7].image[0]} // Lấy ảnh đầu tiên
+                            image={laptops[8].images.anh1} // Lấy ảnh đầu tiên
                         />
                     )}
                 </div>
@@ -97,12 +112,12 @@ const Home = ({ headerHeight }) => {
                             buttonkp={
                                 <ButtonKPBasic
                                     title="Khám phá"
-                                    productId={products[6].name}
+                                    productId={products[6].id}
                                     category="wearable"
                                 />
                             }
                             buttonmn={<ButtonMNBasic />}
-                            image={products[6].image[0]} // Lấy ảnh đầu tiên
+                            image={products[6].images.anh1} // Lấy ảnh đầu tiên
                         />
                     )}
                 </div>
@@ -114,8 +129,8 @@ const Home = ({ headerHeight }) => {
                             buttonkp={
                                 <ButtonKPBasic
                                     title="Khám phá"
-                                    productId={audios[1].name}
-                                    category="wearable"
+                                    productId={audios[1].id}
+                                    category="audios"
                                 />
                             }
                             buttonmn={<ButtonMNBasic />}
