@@ -11,9 +11,10 @@
     "email": "user2@example.com",
     "password": "abcdef",
     "name": "Trần Thị B",
-    "phone": "0987654321",
+    "phone": "0987654327",
     "address": "TP.HCM, Việt Nam",
-    "role": "Quản trị viên"
+    "role": "Quản trị viên",
+    "avatar": "/uploads/1742578841376-475191769.jpg"
   },
   {
     "email": "user3@example.com",
@@ -24,11 +25,39 @@
     "role": "Nhân viên"
   },
   {
-    "name": "Ngô Trần Văn Điềm",
     "email": "vandiem2004@gmail.com",
+    "password": "123456",
+    "name": "Ngô Trần Văn Điềm",
     "phone": "0398752911",
     "address": "TPHCM",
-    "password": "123456",
-    "role": "Nhân viên"
+    "role": "Nhân viên",
+    "avatar": "/uploads/1742563847692-615974449.png"
+  },
+  {
+    "name": "Cao Thành Đông",
+    "email": "dongcao123@gmail.com",
+    "phone": "0966666666",
+    "address": "Canada",
+    "password": "9999",
+    "role": "Nhân viên",
+    "avatar": "/uploads/1742579015765-572444181.jpg"
+  },
+  {
+    "name": "HoangViruss",
+    "email": "virus@gmail.com",
+    "phone": "0633333335",
+    "address": "Hàn Quốc",
+    "password": "123123123",
+    "role": "Khách hàng",
+    "avatar": "/uploads/1742582413652-97781354.jpg"
+  },
+  {
+    "name": "Ngọc Kem",
+    "email": "kem123@gmail.com",
+    "phone": "0666666666",
+    "address": "HongKong",
+    "password": "Kem123",
+    "role": "Khách hàng",
+    "avatar": null
   }
 ]

@@ -24,8 +24,44 @@ const Signup = () => {
   };
 
   // Xử lý đăng ký
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   // Kiểm tra mật khẩu nhập lại có khớp không
+  //   if (formData.password !== formData.confirmPassword) {
+  //     setError("Mật khẩu nhập lại không khớp!");
+  //     return;
+  //   }
+
+  //   // Chuẩn bị dữ liệu gửi lên server (bỏ confirmPassword)
+  //   const { confirmPassword, ...dataToSend } = formData;
+
+  //   try {
+  //     const response = await fetch("http://localhost:5000/signup", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(dataToSend), // Không gửi confirmPassword
+  //     });
+
+  //     const data = await response.json();
+  //     if (response.ok) {
+  //       alert("Đăng ký thành công!");
+  //       navigate("/vn/login"); // Chuyển hướng về trang đăng nhập
+  //     } else {
+  //       setError(data.message);
+  //     }
+  //   } catch (err) {
+  //     console.error("Lỗi:", err);
+  //     setError("Đăng ký thất bại!");
+  //   }
+  // };
+
+  // Xử lý đăng ký
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form submitted!");
 
     // Kiểm tra mật khẩu nhập lại có khớp không
     if (formData.password !== formData.confirmPassword) {
@@ -42,21 +78,33 @@ const Signup = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(dataToSend), // Không gửi confirmPassword
+        body: JSON.stringify(dataToSend),
       });
 
+      console.log("response.ok:", response.ok);
       const data = await response.json();
+      console.log("Dữ liệu server trả về:", data);
+
       if (response.ok) {
+        if (data.email) {
+          localStorage.setItem("userEmail", data.email);
+          console.log("Đã lưu vào localStorage:", data.email);
+        } else {
+          console.warn("Không tìm thấy 'email' trong data server trả về");
+        }
+
         alert("Đăng ký thành công!");
-        navigate("/vn/login"); // Chuyển hướng về trang đăng nhập
+        navigate("/vn/login");
       } else {
-        setError(data.message);
+        setError(data.message || "Đăng ký thất bại!");
       }
     } catch (err) {
       console.error("Lỗi:", err);
       setError("Đăng ký thất bại!");
     }
   };
+
+
 
   return (
     <div
