@@ -26,6 +26,7 @@ function App() {
     }, []);
 
     // Xử lý đăng xuất
+    // eslint-disable-next-line no-unused-vars
     const handleLogout = () => {
         setUser(null);
         localStorage.removeItem("user");

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 
 const UserProfile = () => {
@@ -7,7 +8,7 @@ const UserProfile = () => {
         email: "",
         phone: "",
         role: "user",
-        avatar: null
+        avatar: null,
     });
 
     const [avatarPreview, setAvatarPreview] = useState(null);
@@ -21,7 +22,7 @@ const UserProfile = () => {
                 email: "",
                 phone: "",
                 role: "",
-                avatar: null
+                avatar: null,
             };
 
             setFormData(mockData);
@@ -32,7 +33,7 @@ const UserProfile = () => {
     const handleChange = (e) => {
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         });
     };
 
@@ -41,21 +42,21 @@ const UserProfile = () => {
         if (!file) return;
 
         if (!file.type.match(/image\/(jpeg|png)/)) {
-            alert('Chỉ chấp nhận file JPEG hoặc PNG!');
+            alert("Chỉ chấp nhận file JPEG hoặc PNG!");
             return;
         }
 
         if (file.size > 1024 * 1024) {
-            alert('Dung lượng file tối đa 1MB!');
+            alert("Dung lượng file tối đa 1MB!");
             return;
         }
 
         const reader = new FileReader();
         reader.onloadend = () => {
             setAvatarPreview(reader.result);
-            setFormData(prev => ({
+            setFormData((prev) => ({
                 ...prev,
-                avatar: reader.result
+                avatar: reader.result,
             }));
         };
         reader.readAsDataURL(file);
@@ -63,10 +64,11 @@ const UserProfile = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Updated data:', formData);
+        console.log("Updated data:", formData);
     };
 
-    if (loading) return <div className="text-center p-20">Đang tải dữ liệu...</div>;
+    if (loading)
+        return <div className="text-center p-20">Đang tải dữ liệu...</div>;
 
     return (
         <div className="flex justify-center items-start gap-8 p-8 mt-20">
@@ -85,7 +87,9 @@ const UserProfile = () => {
                                 />
                             ) : (
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <span className="text-gray-400 text-3xl">👤</span>
+                                    <span className="text-gray-400 text-3xl">
+                                        👤
+                                    </span>
                                 </div>
                             )}
                         </div>
@@ -111,13 +115,22 @@ const UserProfile = () => {
             </div>
 
             {/* Form thông tin */}
-            <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6 flex-1 max-w-2xl">
-                <h2 className="text-xl font-bold text-gray-700 mb-2">Hồ Sơ Người Dùng</h2>
-                <p className="text-gray-500 text-sm mb-6">Quản lý thông tin tài khoản</p>
+            <form
+                onSubmit={handleSubmit}
+                className="bg-white shadow-md rounded-lg p-6 flex-1 max-w-2xl"
+            >
+                <h2 className="text-xl font-bold text-gray-700 mb-2">
+                    Hồ Sơ Người Dùng
+                </h2>
+                <p className="text-gray-500 text-sm mb-6">
+                    Quản lý thông tin tài khoản
+                </p>
 
                 <div className="space-y-4">
                     <div className="mb-4">
-                        <label className="block text-gray-600 text-sm mb-1">Họ và tên</label>
+                        <label className="block text-gray-600 text-sm mb-1">
+                            Họ và tên
+                        </label>
                         <input
                             type="text"
                             name="name"
@@ -130,7 +143,9 @@ const UserProfile = () => {
 
                     <div className="mb-4">
                         <div className="flex justify-between items-center">
-                            <label className="block text-gray-600 text-sm mb-1">Email</label>
+                            <label className="block text-gray-600 text-sm mb-1">
+                                Email
+                            </label>
                             <button
                                 type="button"
                                 className="text-red-500 text-sm hover:text-red-600 transition-colors"
@@ -149,7 +164,9 @@ const UserProfile = () => {
 
                     <div className="mb-4">
                         <div className="flex justify-between items-center">
-                            <label className="block text-gray-600 text-sm mb-1">Số điện thoại</label>
+                            <label className="block text-gray-600 text-sm mb-1">
+                                Số điện thoại
+                            </label>
                             <button
                                 type="button"
                                 className="text-red-500 text-sm hover:text-red-600 transition-colors"
@@ -169,7 +186,9 @@ const UserProfile = () => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-gray-600 text-sm mb-1">Địa chỉ</label>
+                        <label className="block text-gray-600 text-sm mb-1">
+                            Địa chỉ
+                        </label>
                         <input
                             type="text"
                             name="username"
@@ -180,7 +199,9 @@ const UserProfile = () => {
                     </div>
 
                     <div className="mb-6">
-                        <label className="block text-gray-600 text-sm mb-1">Vai trò</label>
+                        <label className="block text-gray-600 text-sm mb-1">
+                            Vai trò
+                        </label>
                         <select
                             name="role"
                             value={formData.role}
