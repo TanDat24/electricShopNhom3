@@ -25,7 +25,7 @@ const BannerItem = ({
             src={image}
             alt="watchGt5Pro"
             className={`${
-              isHalfCol ? "w-[512px]" : "w-[1024px]"
+              isHalfCol ? "w-[512px]" : "w-[1920px]"
             } cursor-pointer pb-[4px]`}
             loading="lazy"
           />

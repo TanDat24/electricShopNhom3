@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Header from "./components/header/Header";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
 import UserProfile from "./components/pages/UserProfile";
-import "./index.css";
 import Footer from "./components/footer/Footer";
 import Laptop from "./components/pages/Laptops";
 import ParentWearable from "./components/pages/parentPages/ParentWearable";
@@ -12,77 +16,76 @@ import ParentTaplet from "./components/pages/parentPages/ParentTaplet";
 import ParentAudio from "./components/pages/parentPages/ParentAudio";
 import ParentHome from "./components/pages/parentPages/ParentHome";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
-
+import ParentCategory from "./components/pages/parentPages/ParentCategory";
+import "./index.css";
+import ParentCart from "./components/pages/parentPages/ParentCart";
+import Breadcrumb from "./helpers/Breadcrumb";
 function App() {
-    const [headerHeight, setHeaderHeight] = useState(0);
-    const [user, setUser] = useState(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const [user, setUser] = useState(null);
 
-    // Lấy user từ localStorage khi tải lại trang
-    useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-    }, []);
+  const storedUser = useMemo(() => {
+    return JSON.parse(localStorage.getItem("user"));
+  }, []);
 
-    // Xử lý đăng xuất
-    const handleLogout = () => {
-        setUser(null);
-        localStorage.removeItem("user");
-    };
+  useEffect(() => {
+    if (storedUser) {
+      setUser(storedUser);
+    }
+  }, [storedUser]);
 
-    return (
-        <Router>
-            <div>
-                <Header onHeaderHeightChange={setHeaderHeight} />
-                <nav>
-                    <Link to="/vn"></Link>
-                    <Link to="/vn/wearables"></Link>
-                    <Link to="/vn/laptops"></Link>
-                    <Link to="/vn/tablets"></Link>
-                    <Link to="/vn/audio"></Link>
-                </nav>
-                <Routes>
-                    <Route
-                        path="/vn"
-                        element={<ParentHome headerHeight={headerHeight} />}
-                    />
-                    <Route
-                        path="/vn/wearables"
-                        element={<ParentWearable headerHeight={headerHeight} />}
-                    />
-                    <Route
-                        path="/vn/laptops"
-                        element={<Laptop headerHeight={headerHeight} />}
-                    />
-                    <Route
-                        path="/vn/tablets"
-                        element={<ParentTaplet headerHeight={headerHeight} />}
-                    />
-                    <Route
-                        path="/vn/audio"
-                        element={<ParentAudio headerHeight={headerHeight} />}
-                    />
-                    <Route
-                        path="/vn/login"
-                        element={<Login setUser={setUser} />}
-                    />
-                    <Route path="/vn/signup" element={<Signup />} />
-                    <Route
-                        path="/vn/profile"
-                        element={<UserProfile user={user} />}
-                    />
-                    {/* Route cho từng loại sản phẩm */}
-                    <Route
-                        path="/vn/:category/product-detail/:productId"
-                        element={<ProductDetail />}
-                    />
-                </Routes>
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+  };
 
-                <Footer />
-            </div>
-        </Router>
-    );
+  return (
+    <Router>
+      <div>
+        <Header onHeaderHeightChange={setHeaderHeight} />
+        <Routes>
+          <Route path="/" element={<Navigate to="/vn" replace />} />
+
+          <Route
+            path="/vn"
+            element={<ParentHome headerHeight={headerHeight} />}
+          />
+          <Route
+            path="/vn/wearables"
+            element={<ParentWearable headerHeight={headerHeight} />}
+          />
+          <Route
+            path="/vn/laptops"
+            element={<Laptop headerHeight={headerHeight} />}
+          />
+          <Route
+            path="/vn/tablets"
+            element={<ParentTaplet headerHeight={headerHeight} />}
+          />
+          <Route
+            path="/vn/audio"
+            element={<ParentAudio headerHeight={headerHeight} />}
+          />
+
+          <Route path="/vn/login" element={<Login setUser={setUser} />} />
+          <Route path="/vn/signup" element={<Signup />} />
+          <Route
+            path="/vn/profile"
+            element={<UserProfile user={user} onLogout={handleLogout} />}
+          />
+
+          <Route path="/vn/:category" element={<ParentCategory />} />
+          <Route
+            path="/vn/:category/product-detail/:productId"
+            element={<ProductDetail />}
+          />
+          <Route path="/vn/checkout" element={<ParentCart />} />
+        </Routes>
+        <Breadcrumb />
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
 export default App;

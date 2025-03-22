@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const Note = ({page}) =>{
-    return (<div><div className="container mx-auto pt-12 text-textGray pb-6">
+const Note = ({ page }) => {
+  return (
+    <div>
+      <div className="container mx-auto pt-12 text-textGray pb-6">
         <p>
           *Một số tính năng sẽ không khả dụng ở vài khu vực. Hình ản h, video và
           nội dung sản phẩm trong các trang chỉ mang tính tham khảo. Các tính
@@ -46,13 +48,8 @@ const Note = ({page}) =>{
           thực tế cho từng sản phẩm riêng biệt có thể cao hoặc thấp hơn đôi chút
           so với dung lượng pin danh nghĩa.
         </p>
-        <br />
-        <p>
-          <Link to="/vn" className="hover:text-colorText">
-            Trang Chủ{" "}
-          </Link>{" "}
-          / {page}
-        </p>
-      </div></div>)
-}
-export default Note
+      </div>
+    </div>
+  );
+};
+export default Note;
