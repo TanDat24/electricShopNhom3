@@ -35,7 +35,7 @@ function Wearables({ headerHeight }) {
             />
           }
           buttonmn={<ButtonMNBasic />}
-          image={products[1].image[0]} // Lấy ảnh đầu tiên
+          image={products[1].images.anh1} // Lấy ảnh đầu tiên
         />
       )}
       <div className="container mx-auto">
@@ -76,95 +76,105 @@ function Wearables({ headerHeight }) {
         </div>
       </div>
       <div>
-        {products[2] && (
+        {products[3] && (
           <ContentCart
             id="watch-ultimate"
-            title={products[2].title}
-            des={products[2].des}
-            name={products[2].name}
-            image={products[2].image}
+            title={products[3].title}
+            des={products[3].des}
+            name={products[3].name}
+            image={products[3].images}
           />
         )}
       </div>
       <div>
-        {products[3] && (
+        {products[4] && (
           <ContentCart
             id="watch-series"
-            title={products[3].title}
-            des={products[3].des}
-            name={products[3].name}
-            image={products[3].image}
+            title={products[4].title}
+            des={products[4].des}
+            name={products[4].name}
+            image={products[4].images}
           />
         )}
         <div className="container mx-auto m-6 rounded-xl bg-white p-4 h-[340px]">
-          {products[4] && (
-            <CartComputer des={products[4].des} image={products[4].image} />
+          {products[5] && (
+            <CartComputer
+              des={products[5].des}
+              image={products[5].images.anh1}
+              name={products[5].name}
+            />
           )}
         </div>
       </div>
       <div>
-        {products[5] && (
+        {products[6] && (
           <ContentCart
-            id="watch-series"
-            title={products[5].title}
-            des={products[5].des}
-            name={products[5].name}
-            image={products[5].image}
+            id="watch-gt-series"
+            title={products[6].title}
+            des={products[6].des}
+            name={products[6].name}
+            image={products[6].images}
           />
         )}
         <div className="container mx-auto rounded-xl mt-4 pb-12">
           <div className="grid grid-cols-12 gap-4 h-[340px]">
             <div className="col-span-6 bg-white p-2 rounded-lg h-full">
-              {products[6] && (
-                <CartComputer des={products[6].des} image={products[6].image} />
-              )}
-            </div>
-            <div className="col-span-3 bg-white p-2 rounded-lg">
               {products[7] && (
-                <ListCart
-                  images={products[7].image}
-                  name={products[7].name}
-                  des1={products[7].des}
+                <CartComputer
+                  des={products[7].des}
+                  image={products[7].images.anh1}
                 />
               )}
             </div>
+
             <div className="col-span-3 bg-white p-2 rounded-lg">
               {products[8] && (
                 <ListCart
-                  images={products[8].image}
+                  images={products[8].images.anh1}
                   name={products[8].name}
                   des1={products[8].des}
                 />
               )}
             </div>
+            <div className="col-span-3 bg-white p-2 rounded-lg">
+              {products[9] && (
+                <ListCart
+                  images={products[9].images.anh1}
+                  name={products[9].name}
+                  des1={products[9].des}
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
       <div>
-        {products[9] && (
+        {products[10] && (
           <ContentCart
-            id="watch-series"
-            title={products[9].title}
-            des={products[9].des}
-            name={products[9].name}
-            image={products[9].image}
+            id="watch-fit-series"
+            title={products[10].title}
+            des={products[10].des}
+            name={products[10].name}
+            image={products[10].images}
           />
         )}
         <div className="container mx-auto pb-12 pt-4">
           <div className="grid grid-cols-2 gap-4 h-[340px]">
             <div className="bg-white p-4 rounded-lg">
-              {products[10] && (
+              {products[11] && (
                 <CartComputer
-                  des={products[10].des}
-                  image={products[10].image}
+                  des={products[11].des}
+                  image={products[11].images.anh1}
+                  name={products[11].name}
                 />
               )}
             </div>
             <div className="bg-white p-4 rounded-lg">
-              {products[11] && (
+              {products[12] && (
                 <CartComputer
-                  des={products[11].des}
-                  image={products[11].image}
+                  des={products[12].des}
+                  image={products[12].images.anh1}
+                  name={products[12].name}
                 />
               )}
             </div>
@@ -172,18 +182,22 @@ function Wearables({ headerHeight }) {
         </div>
       </div>
       <div>
-        {products[12] && (
+        {products[13] && (
           <ContentCart
-            id="watch-series"
-            title={products[12].title}
-            des={products[12].des}
-            name={products[12].name}
-            image={products[12].image}
+            id="healthKids-watch"
+            title={products[13].title}
+            des={products[13].des}
+            name={products[13].name}
+            image={products[13].images}
           />
         )}
         <div className="container mx-auto m-6 rounded-xl bg-white p-4 h-[340px]">
-          {products[13] && (
-            <CartComputer des={products[13].des} image={products[13].image} />
+          {products[14] && (
+            <CartComputer
+              des={products[14].des}
+              image={products[14].images.anh1}
+              name={products[14].name}
+            />
           )}
         </div>
       </div>
@@ -193,23 +207,35 @@ function Wearables({ headerHeight }) {
         </h1>
         <div className="grid grid-cols-4 gap-4 pb-6 h-[460px] pb-12">
           <div className="bg-white p-4 rounded-lg">
-            {products[14] && (
-              <ListCart images={products[14].image} name={products[14].name} />
-            )}
-          </div>
-          <div className="bg-white p-4 rounded-lg">
             {products[15] && (
-              <ListCart images={products[15].image} name={products[15].name} />
+              <ListCart
+                images={products[15].images.anh1}
+                name={products[15].name}
+              />
             )}
           </div>
           <div className="bg-white p-4 rounded-lg">
             {products[16] && (
-              <ListCart images={products[16].image} name={products[16].name} />
+              <ListCart
+                images={products[16].images.anh1}
+                name={products[16].name}
+              />
             )}
           </div>
           <div className="bg-white p-4 rounded-lg">
             {products[17] && (
-              <ListCart images={products[17].image} name={products[17].name} />
+              <ListCart
+                images={products[17].images.anh1}
+                name={products[17].name}
+              />
+            )}
+          </div>
+          <div className="bg-white p-4 rounded-lg">
+            {products[18] && (
+              <ListCart
+                images={products[18].images.anh1}
+                name={products[18].name}
+              />
             )}
           </div>
         </div>
