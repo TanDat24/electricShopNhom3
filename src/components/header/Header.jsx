@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { images } from "../../assets/image";
 
 import NavItem from "../ui/NavItem";
@@ -12,7 +12,7 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
     const headerRef = useRef(null);
     const [headerHeight, setHeaderHeight] = useState(0);
     const [isScrolled, setIsScrolled] = useState(false);
-
+    const navigate = useNavigate();
     useEffect(() => {
         if (headerRef.current) {
             setHeaderHeight(headerRef.current.offsetHeight);
@@ -34,6 +34,10 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+    const logoutAndRedirect = () => {
+        handleLogout();
+        navigate("/vn/login"); 
+    };
     return (
         <>
             <header
@@ -94,13 +98,13 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
                                         <div className="flex items-center space-x-4">
                                             <Link
                                                 to="/vn/profile"
-                                                className="text-lg font-semibold text-blue-600 hover:underline"
+                                                className="text-lg font-semibold text-black-600 "
                                             >
                                                 {/*  eslint-disable-next-line react/prop-types */}
                                                 {user.name}
                                             </Link>
                                             <button
-                                                onClick={handleLogout}
+                                                onClick={logoutAndRedirect}
                                                 className="bg-red-500 text-white px-3 py-1 rounded"
                                             >
                                                 Đăng xuất

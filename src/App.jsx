@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "./components/header/Header";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
@@ -16,8 +17,6 @@ import ProductDetail from "./components/ProductDetail/ProductDetail";
 function App() {
     const [headerHeight, setHeaderHeight] = useState(0);
     const [user, setUser] = useState(null);
-
-    // Lấy user từ localStorage khi tải lại trang
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
         if (storedUser) {
@@ -25,7 +24,6 @@ function App() {
         }
     }, []);
 
-    // Xử lý đăng xuất
     const handleLogout = () => {
         setUser(null);
         localStorage.removeItem("user");
@@ -34,7 +32,7 @@ function App() {
     return (
         <Router>
             <div>
-                <Header onHeaderHeightChange={setHeaderHeight} />
+                <Header user={user} handleLogout={handleLogout}  onHeaderHeightChange={setHeaderHeight} />
                 <nav>
                     <Link to="/vn"></Link>
                     <Link to="/vn/wearables"></Link>
