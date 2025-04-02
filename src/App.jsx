@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect, useMemo } from "react";
 import {
   BrowserRouter as Router,
@@ -5,6 +6,11 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+=======
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
 import Header from "./components/header/Header";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
@@ -21,6 +27,7 @@ import "./index.css";
 import ParentCart from "./components/pages/parentPages/ParentCart";
 import Breadcrumb from "./helpers/Breadcrumb";
 function App() {
+<<<<<<< HEAD
   const [headerHeight, setHeaderHeight] = useState(0);
   const [user, setUser] = useState(null);
 
@@ -38,6 +45,69 @@ function App() {
     setUser(null);
     localStorage.removeItem("user");
   };
+=======
+    const [headerHeight, setHeaderHeight] = useState(0);
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
+    const handleLogout = () => {
+        setUser(null);
+        localStorage.removeItem("user");
+    };
+
+    return (
+        <Router>
+            <div>
+                <Header user={user} handleLogout={handleLogout}  onHeaderHeightChange={setHeaderHeight} />
+                <nav>
+                    <Link to="/vn"></Link>
+                    <Link to="/vn/wearables"></Link>
+                    <Link to="/vn/laptops"></Link>
+                    <Link to="/vn/tablets"></Link>
+                    <Link to="/vn/audio"></Link>
+                </nav>
+                <Routes>
+                    <Route
+                        path="/vn"
+                        element={<ParentHome headerHeight={headerHeight} />}
+                    />
+                    <Route
+                        path="/vn/wearables"
+                        element={<ParentWearable headerHeight={headerHeight} />}
+                    />
+                    <Route
+                        path="/vn/laptops"
+                        element={<Laptop headerHeight={headerHeight} />}
+                    />
+                    <Route
+                        path="/vn/tablets"
+                        element={<ParentTaplet headerHeight={headerHeight} />}
+                    />
+                    <Route
+                        path="/vn/audio"
+                        element={<ParentAudio headerHeight={headerHeight} />}
+                    />
+                    <Route
+                        path="/vn/login"
+                        element={<Login setUser={setUser} />}
+                    />
+                    <Route path="/vn/signup" element={<Signup />} />
+                    <Route
+                        path="/vn/profile"
+                        element={<UserProfile user={user} />}
+                    />
+                    {/* Route cho từng loại sản phẩm */}
+                    <Route
+                        path="/vn/:category/product-detail/:productId"
+                        element={<ProductDetail />}
+                    />
+                </Routes>
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
 
   return (
     <Router>

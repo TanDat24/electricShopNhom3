@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { images } from "../../assets/image";
 
 import NavItem from "../ui/NavItem";
@@ -10,6 +10,7 @@ import { CartProvider } from "../../contexts/CartContext";
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
+<<<<<<< HEAD
   const headerRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +20,17 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
       setHeaderHeight(headerRef.current.offsetHeight);
     }
   }, []);
+=======
+    const headerRef = useRef(null);
+    const [headerHeight, setHeaderHeight] = useState(0);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (headerRef.current) {
+            setHeaderHeight(headerRef.current.offsetHeight);
+        }
+    }, []);
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
 
   useEffect(() => {
     if (headerRef.current) {
@@ -32,6 +44,7 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
       setIsScrolled(scrollPosition > 0);
     };
 
+<<<<<<< HEAD
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -40,6 +53,20 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
       <header
         ref={headerRef}
         className={`fixed top-0 left-0 w-full z-30 transition-colors duration-300
+=======
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    const logoutAndRedirect = () => {
+        handleLogout();
+        navigate("/vn/login"); 
+    };
+    return (
+        <>
+            <header
+                ref={headerRef}
+                className={`fixed top-0 left-0 w-full z-30 transition-colors duration-300
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
                     ${
                       isScrolled
                         ? "bg-white border-b border-borderColor"
@@ -65,6 +92,7 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
                       <NavItem>Thiết Bị Đeo</NavItem>
                     </Link>
 
+<<<<<<< HEAD
                     <Link to="/vn/laptops">
                       <NavItem>Máy Tính Xách Tay</NavItem>
                     </Link>
@@ -77,6 +105,58 @@ const Header = ({ onHeaderHeightChange, user, handleLogout }) => {
                     <NavItem>Phụ Kiện</NavItem>
                     <NavItem>EMUI</NavItem>
                   </ul>
+=======
+                                        <Link to="/vn/laptops">
+                                            <NavItem>Máy Tính Xách Tay</NavItem>
+                                        </Link>
+                                        <Link to="/vn/tablets">
+                                            <NavItem>Máy Tính Bảng</NavItem>
+                                        </Link>
+                                        <Link to="/vn/audio">
+                                            <NavItem>Tai Nghe và Loa</NavItem>
+                                        </Link>
+                                        <NavItem>Phụ Kiện</NavItem>
+                                        <NavItem>EMUI</NavItem>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center justify-end">
+                                <NavItem className="mb-0 mr-10 font-medium">
+                                    Hỗ trợ
+                                </NavItem>
+                                <div className="flex items-center pl-10 cursor-pointer">
+                                    <Cart />
+                                    <Search headerHeight={headerHeight} />
+                                    {user ? (
+                                        <div className="flex items-center space-x-4">
+                                            <Link
+                                                to="/vn/profile"
+                                                className="text-lg font-semibold text-black-600 "
+                                            >
+                                                {/*  eslint-disable-next-line react/prop-types */}
+                                                {user.name}
+                                            </Link>
+                                            <button
+                                                onClick={logoutAndRedirect}
+                                                className="bg-red-500 text-white px-3 py-1 rounded"
+                                            >
+                                                Đăng xuất
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            to="/vn/login"
+                                            className="bg-blue-500 text-white px-4 py-1 rounded"
+                                        >
+                                            Đăng nhập
+                                        </Link>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
                 </div>
               </div>
 

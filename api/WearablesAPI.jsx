@@ -91,8 +91,46 @@ export const ProductProvider = ({ children }) => {
       setLoading(false);
     };
 
+<<<<<<< HEAD
     loadAllData();
   }, []);
+=======
+    useEffect(() => {
+        const loadAllData = async () => {
+            setLoading(true);
+            await Promise.all([
+                loadData(
+                    "products",
+                    (id) =>
+                        `https://67d23e3290e0670699bcc2c3.mockapi.io/da/wearables/${id}`,
+                    setProducts,
+                    "products"
+                ),
+                loadData(
+                    "laptops",
+                    (id) =>
+                        `https://67d23e3290e0670699bcc2c3.mockapi.io/da/laptop/${id}`,
+                    setLaptops,
+                    "laptops"
+                ),
+                loadData(
+                    "tablets",
+                    (id) =>
+                        `https://67dbd0561fd9e43fe476065f.mockapi.io/tablet/${id}`,
+                    setTablets,
+                    "tablets"
+                ),
+                loadData(
+                    "audios",
+                    (id) =>
+                        `https://67dbd0561fd9e43fe476065f.mockapi.io/audio/${id}`,
+                    setAudios,
+                    "audios"
+                ),
+            ]);
+            setLoading(false);
+        };
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
 
   return (
     <ProductContext.Provider

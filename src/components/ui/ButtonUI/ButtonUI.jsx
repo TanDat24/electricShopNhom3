@@ -9,7 +9,7 @@ const ButtonUI = ({
     className,
     buttonColor = "text-black",
     svgColor = "text-black",
-    category, // Nhận category động từ props
+    category,
     productId = "default-id",
 }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
