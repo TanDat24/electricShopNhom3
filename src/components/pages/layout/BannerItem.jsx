@@ -32,6 +32,22 @@ const BannerItem = ({
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
+        <div className="mb-0">
+          <img
+            src={image}
+            alt="watchGt5Pro"
+            className={`${
+              isHalfCol ? "w-[512px]" : "w-[1920px]"
+            } cursor-pointer pb-[4px]`}
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  );
+=======
     );
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
 };
 export default BannerItem;

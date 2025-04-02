@@ -1,0 +1,203 @@
+{
+    "categories": [
+      {
+        "id": "category-1",
+        "name": "Điện thoại",
+        "iconImage": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/support-v3/function-list/phones-hei-0109.png",
+        "subCategory": [
+          {
+            "series": "HUAWEI Mate Series",
+            "models": [
+                {"id": "mate-30-pro", "name": "HUAWEI Mate 30 Pro", "price": 15000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/mate30-pro-4g/mate30-pro-space-silver.png"},
+                {"id": "mate-20-pro", "name": "HUAWEI Mate 20 Pro", "price": 12000000, "quantity": 30, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/mate20-pro/mate20pro_listimg.png"},
+                {"id": "mate-20-x", "name": "HUAWEI Mate 20 X", "price": 11000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/mate20x/ever-sliver.png"},
+                {"id": "mate-20", "name": "HUAWEI Mate 20", "price": 10000000, "quantity": 60, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/mate20/mate20_listimg.png"}
+
+
+            ]
+          },
+          {
+            "series": "HUAWEI P Series",
+            "models": [
+                {"id": "p40-pro-plus", "name": "HUAWEI P40 Pro+", "price": 18000000, "quantity": 20, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/p40-pro-plus/p40-pro-plus-white.png"},
+                {"id": "p40-pro", "name": "HUAWEI P40 Pro", "price": 16000000, "quantity": 25, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/p40-pro/p40-pro-blue.png"},
+                {"id": "p40", "name": "HUAWEI P40", "price": 14000000, "quantity": 35, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/p40/p40-blue.png"},
+                {"id": "p30-lite", "name": "HUAWEI P30 lite", "price": 7000000, "quantity": 80, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/p30-lite/p30lite-bule.png"},
+                {"id": "p30-pro", "name": "HUAWEI P30 Pro", "price": 13000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/p30-pro/P30Pro_skyblue.png"},
+                {"id": "p30", "name": "HUAWEI P30", "price": 12000000, "quantity": 45, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/p30/P30_twilight.png"},
+                {"id": "p20-pro", "name": "HUAWEI P20 Pro", "price": 10000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/p20-pro/P20-pro_listiamge-black.png"}
+            ]
+          },
+          {
+            "series": "HUAWEI nova Series",
+            "models": [
+                {"id": "nova-7i", "name": "HUAWEI nova 7i", "price": 8000000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/phones/nova7i/nova-7i-list-sakura-pink.png"},
+                {"id": "nova-5t", "name": "HUAWEI nova 5T", "price": 7000000, "quantity": 60, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/nova-5t/nova5t-purple.png"},
+                {"id": "nova-3i", "name": "HUAWEI nova 3i", "price": 6000000, "quantity": 80, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/nova-3i/nova3i-listimage-black.png"},
+                {"id": "p20-lite", "name": "Huawei P20 lite", "price": 5000000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/nova-3e/nova3e-listimage-black.png"}
+            ]
+            
+          },
+          {
+            "series": "HUAWEI Y Series",
+            "models": [
+                {"id": "y9s", "name": "HUAWEI Y9s", "price": 6000000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/y9s/Huawei-y9s-listImage-breathing-crystal.png"},
+                {"id": "y6p", "name": "HUAWEI Y6p", "price": 4000000, "quantity": 120, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/phones/y6p/y6s-listimage-green.png"},
+                {"id": "y9-prime-2019", "name": "HUAWEI Y9 Prime 2019", "price": 5500000, "quantity": 80, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/y9-prime-2019/y9-prime-2019-black.png"},
+                {"id": "y9-2019", "name": "HUAWEI Y9 2019", "price": 5000000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/support/list-image/phones/y9-2019.png"},
+                {"id": "y7-pro-2019", "name": "HUAWEI Y7 Pro 2019", "price": 4500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/y7-pro-2019/blue.png"},
+                {"id": "y6-prime-2018", "name": "HUAWEI Y6 Prime 2018", "price": 3500000, "quantity": 110, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/y6-prime-2018/y6-prime-2018-listimage-blue-original.png"},
+                {"id": "y7-prime-2018", "name": "HUAWEI Y7 Prime 2018", "price": 4000000, "quantity": 95, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/y7-prime-2018/y7-prime-2018-listimage-blue.png"},
+                {"id": "y611", "name": "Y611", "price": 3000000, "quantity": 130, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/phones/y6ii/y6ii-listimage-black.png"}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "category-2",
+        "name": "Thiết bị đeo",
+        "iconImage": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/support-v3/function-list/50-hover-watch.png",
+        "subCategory": [
+            {
+                "series": "Thiết bị đeo",
+                "model":[
+                    {"id": "watch-d2", "name": "HUAWEI WATCH D2", "price": 6000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-d2/list/list-black.png"},
+                    {"id": "watch-gt5", "name": "HUAWEI WATCH GT 5", "price": 5500000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-gt5/list/46mm-blue.png"},
+                    {"id": "watch-gt5-pro", "name": "HUAWEI WATCH GT 5 Pro", "price": 7000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-gt5-pro/list/list-46mm-black.png"},
+                    {"id": "watch-fit3", "name": "HUAWEI WATCH FIT 3", "price": 4500000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-fit3/leather.png"},
+                    {"id": "band-9", "name": "HUAWEI Band 9", "price": 6000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/band9/list/white.png"},
+                    {"id": "watch-ultimate", "name": "HUAWEI WATCH Ultimate", "price": 5500000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-ultimate/list/list-blue.png"},
+                    {"id": "watch-gt4", "name": "HUAWEI WATCH GT 4", "price": 7000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt4/watch-gt4/list/46mm-green.png"},
+                    {"id": "watch-fit-special-edition", "name": "HUAWEI WATCH FIT Special Edition", "price": 4500000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-fit-special-edition/list/black.png"},
+                    {"id": "band-8", "name": "HUAWEI Band 8", "price": 6000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/band8/list/emerald-green-list-img.png"},
+                    {"id": "watch-4", "name": "HUAWEI WATCH 4", "price": 5500000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-4/list-black.png"},
+                    {"id": "watch-gt-cyber", "name": "HUAWEI WATCH GT Cyber", "price": 7000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-gt-cyber/list/golden-black.png"},
+                    {"id": "watch-buds", "name": "HUAWEI WATCH Buds", "price": 4500000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-buds/list/khaki.png"},
+                    {"id": "watch-gt3-se", "name": "HUAWEI WATCH GT 3 SE", "price": 6000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-gt3-se/graphite-black.png"},
+                    {"id": "watch-gt3-pro-titanium", "name": "HUAWEI WATCH GT 3 Pro Titanium", "price": 5500000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-gt3-pro-titanium/black.png"},
+                    {"id": "watch-gt3-pro-ceramic", "name": "HUAWEI WATCH GT 3 Pro Ceramic", "price": 7000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-gt3-pro-ceramic/white-ceramic.png"},
+                    {"id": "band-7", "name": "HUAWEI Band 7", "price": 4500000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/band7/green.png"},
+                    {"id": "band-6", "name": "HUAWEI Band 6", "price": 6000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/band6/specs/black-plp.png"},
+                    {"id": "watch-kids-4-pro", "name": "HUAWEI WATCH KIDS 4 Pro", "price": 5500000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/k4-pro/specs/k4-pro-pink.png"},
+                    {"id": "watch-fit2", "name": "HUAWEI WATCH FIT 2", "price": 7000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/wearables/watch-fit2/midnight-black.png"},
+                    {"id": "watch-fit-new", "name": "HUAWEI WATCH FIT new", "price": 4500000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/wearables/watch-fit-new/list-red.png"},
+                    {"id": "watch-gt3", "name": "HUAWEI WATCH GT 3", "price": 6000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt3/specs/watch-gt3-46-active-edition.png"},
+                    {"id": "watch-gt-runner", "name": "HUAWEI WATCH GT Runner", "price": 5500000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt-runner/specs/grey.png"},
+                    {"id": "watch-3", "name": "HUAWEI WATCH 3", "price": 7000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-3/active-edition.png"},
+                    {"id": "watch-3-pro", "name": "HUAWEI WATCH 3 PRO", "price": 4500000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-3-pro/classic-edition.png"},
+                    {"id": "watch-gt2-pro", "name": "HUAWEI WATCH GT 2 Pro", "price": 6000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt-2-pro/Nebula-Gray.png"},
+                    {"id": "watch-fit", "name": "HUAWEI WATCH FIT", "price": 5500000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/wearables/watch-fit/watch-fit-listimage-Graphite-Black.png"},
+                    {"id": "watch-gt2e", "name": "HUAWEI WATCH GT 2e", "price": 7000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/wearables/watch-gt-2e/watch-gt-2e-listimage.png"},
+                    {"id": "watch-gt2", "name": "HUAWEI WATCH GT 2", "price": 4500000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/wearables/watch-gt2/watch-gt2-listimage-Matte-Black.png"},
+                    {"id": "watch-gt", "name": "HUAWEI WATCH GT", "price": 6000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/wearables/watch-gt/watch-gt-listimage-black.png"},
+                    {"id": "talkband-b5", "name": "HUAWEI TalkBand B5", "price": 5500000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/list-image/wearables/talkband-b5-listimage.png"},
+                    {"id": "band-b0", "name": "HUAWEI Band BO", "price": 7000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/wearables/b0/b0-listimage-black.png"},
+                    {"id": "band-4", "name": "HUAWEI Band 4", "price": 4500000, "quantity": 90, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/wearables/band4/band4-black.png"}
+                ]
+            }
+        ]
+      },
+
+          {
+            "id": "category-3",
+            "name": "Máy tính xách tay",
+            "iconImage": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/support-v3/function-list/50-hover-computer.png",
+            "subCategory": [
+                {
+                    "series": "Máy tính xách tay",
+                    "model":[
+                        {"id": "matebook-d14-be", "name": "HUAWEI MateBook D 14 BE", "price": 15000000, "quantity": 30, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/pc/matebook-d-14-be/list.png"},
+                        {"id": "matebook-d14-2023", "name": "HUAWEI MateBook D 14 2023", "price": 16000000, "quantity": 25, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/pc/matebook-d-14-2023/list/gray.png"},
+                        {"id": "matebook-14-2022", "name": "HUAWEI MateBook 14 2022", "price": 17000000, "quantity": 20, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/pc/matebook-14-2022/list/gray.png"},
+                        {"id": "matebook-d16", "name": "HUAWEI MateBook D 16", "price": 18000000, "quantity": 15, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/pc/matebook-d-16/gray.png"},
+                        {"id": "matebook-d15-amd-2021", "name": "HUAWEI MateBook D 15 AMD 2021", "price": 15000000, "quantity": 30, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/pc/matebook-d-15-amd-2021/Silver.png"},
+                        {"id": "matebook-d14-2021", "name": "HUAWEI MateBook D 14 2021", "price": 16000000, "quantity": 25, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/mkt/pdp/pc/matebook-d-14-2021/specs/gray.png"},
+                        {"id": "matebook-14-amd-2021", "name": "HUAWEI MateBook 14 AMD 2021", "price": 17000000, "quantity": 20, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/pc/matebook-14-amd-2021-new/list-img/gray.png"},
+                        {"id": "matebook-14-2021", "name": "HUAWEI MateBook 14 2021", "price": 18000000, "quantity": 15, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/pc/matebook-14-2021/specs/list.png"},
+                        {"id": "matebook-d15-2021", "name": "HUAWEI MateBook D 15 2021", "price": 15000000, "quantity": 30, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/pc/matebook-d-15-2021/specs/gray.png"},
+                        {"id": "matebook-d14-2020", "name": "HUAWEI MateBook D 14 2020", "price": 16000000, "quantity": 25, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/pc/matebook-d-14-amd/Silver.png"},
+                        {"id": "matebook-13-2020", "name": "HUAWEI MateBook 13 2020", "price": 17000000, "quantity": 20, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/pc/matebook-13-2020/img/Silver.png"},
+                        {"id": "matebook-d14-amd", "name": "HUAWEI MateBook D 14 AMD", "price": 18000000, "quantity": 15, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/pc/matebook-d-14-amd/gray.png"},
+                        {"id": "matebook-d15", "name": "HUAWEI MateBook D 15", "price": 18000000, "quantity": 15, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/pc/matebook-d-15-amd/gray.png"}
+                    ]
+                }
+            ]
+          },
+          {
+            "id": "category-4",
+            "name": "Máy tính bảng",
+            "iconImage": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/support-v3/function-list/50-hover-tablets.png",
+
+            "subCategory": [
+                {
+                    "series": "Máy tính bảng",
+                    "models":   [
+                        {"id": "matepad-pro-12-2", "name": "HUAWEI MatePad Pro 12.2-inch", "price": 12000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/tablets/matepad-pro-12-2/list/list-gold.png"},
+                        {"id": "matepad-11-5s", "name": "HUAWEI MatePad 11.5\"S", "price": 10000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/tablets/matepad-11-5-s/list/gray-list.png"},
+                        {"id": "matepad-11-5", "name": "HUAWEI MatePad 11.5", "price": 9500000, "quantity": 60, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/tablets/matepad-11-5/new/list/space-gray.png"},
+                        {"id": "matepad-se-10-4", "name": "HUAWEI MatePad SE 10.4-inch", "price": 8000000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/tablets/matepad-se/list/black.png"},
+                        {"id": "matepad-2022", "name": "HUAWEI MatePad 2022", "price": 12000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-2022/specs/list.png"},
+                        {"id": "matepad-11", "name": "HUAWEI MatePad 11", "price": 10000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-11/matepad-11-list-grey.png"},
+                        {"id": "matepad-t10s", "name": "HUAWEI MatePad T 10s", "price": 9500000, "quantity": 60, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/tablets/matepad-t-10s/list-img-blue.png"},
+                        {"id": "matepad-t10", "name": "HUAWEI MatePad T 10", "price": 8000000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/mkt/pdp/tablets/matepad-t-10/list.png"},
+                        {"id": "matepad", "name": "HUAWEI MatePad", "price": 12000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/tablets/matepad/matepad-grey.png"},
+                        {"id": "matepad-pro", "name": "HUAWEI MatePad Pro", "price": 10000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/midnight-grey.png"},
+                        {"id": "matepad-t8", "name": "HUAWEI MatePad T 8", "price": 9500000, "quantity": 60, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-t-8/list-image.png"},
+                        {"id": "mediapad-m5-lite", "name": "HUAWEI MediaPad M5 lite", "price": 8000000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/tablets/mediapad-m5-lite/m5-lite-listimage-gray.png"},
+                        {"id": "mediapad-t5", "name": "HUAWEI MediaPad T5", "price": 12000000, "quantity": 40, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/tablets/mediapad-t5/mediapad-t5-listimg-black.png"},
+                        {"id": "mediapad-t3-7", "name": "HUAWEI MediaPad T3 7", "price": 10000000, "quantity": 50, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/tablets/t3-7/t3-7-listimage-black.png"},
+                        {"id": "mediapad-t3", "name": "HUAWEI MediaPad T3", "price": 9500000, "quantity": 60, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/tablets/t3-8/t3-8-listimage-white.png"},
+                        {"id": "mediapad-m3-lite", "name": "HUAWEI MediaPad M3 Lite", "price": 8000000, "quantity": 70, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/list-image/tablets/m3-lite-8/m3-lite-8-listimage-black.png"}
+                    ]
+                }
+            ]
+          },
+          {
+            "id": "category-5",
+            "name": "Sản phẩm khác",
+            "iconImage": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/support-v3/function-list/50-hover-other.png",
+            "subCategory": [
+                {
+                    "series": "Audio",
+                    "models": [
+                        {"id": "freebuds-se3", "name": "HUAWEI FreeBuds SE 3", "price": 2000000, "quantity": 200, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freebuds-se-3/list/beige.png"},
+                        {"id": "freebuds-pro4", "name": "HUAWEI FreeBuds Pro 4", "price": 3000000, "quantity": 150, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freebuds-pro-4/list/black.png"},
+                        {"id": "freebuds-6i", "name": "HUAWEI FreeBuds 6i", "price": 2500000, "quantity": 180, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freebuds6i/list-white.png"},
+                        {"id": "freeclip", "name": "HUAWEI FreeClip", "price": 3500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freeclip/list/list-purple.png"},
+                        {"id": "freebuds-pro3", "name": "HUAWEI FreeBuds Pro 3", "price": 3500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freebuds-pro-3/list/list-green.png"},
+                        {"id": "freebuds-se2", "name": "HUAWEI FreeBuds SE 2", "price": 3500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freebuds-se-2/list/list.png"},
+                        {"id": "freebuds-5", "name": "HUAWEI FreeBuds 5", "price": 2000000, "quantity": 200, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freebuds5/silver.png"},
+                        {"id": "freebuds-5i", "name": "HUAWEI FreeBuds 5i", "price": 3000000, "quantity": 150, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freebuds5i/black.png"},
+                        {"id": "freebuds-se", "name": "HUAWEI FreeBuds SE", "price": 2500000, "quantity": 180, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/headphones/freebuds-se/specs/blue.png"},
+                        {"id": "freebuds-4", "name": "HUAWEI FreeBuds 4", "price": 3500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/headphones/freebuds4/specs/silver.png"},
+                        {"id": "freebuds-lipstick", "name": "HUAWEI FreeBuds Lipstick", "price": 3500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/headphones/freebuds-lipstick/freebuds-lipstick-red.PNG"},
+                        {"id": "freebuds-pro2", "name": "HUAWEI FreeBuds Pro 2", "price": 3500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/admin-image/headphones/freebuds-pro-2/list/silver-blue.png"},
+                        {"id": "freebuds-pro", "name": "HUAWEI FreeBuds Pro", "price": 3500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/audio/freebuds-pro/freebuds-pro-silver.png"},
+                        {"id": "freebuds-4i", "name": "HUAWEI FreeBuds 4i", "price": 3500000, "quantity": 100, "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/audio/freebuds4i/specs-img/freebuds4i-red.png"}
+                    ]
+                }
+              
+            ]
+          },
+          {
+            "id": "category-6",
+            "name": "Phần mềm và Công cụ",
+            "iconImage": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/support-v3/product-list/ruanjian-hover0109.png",
+            "subCategory": [
+                {
+                    "series": "Apps and Tools",
+                    "models":[
+                        {"id": "emui", "name": "EMUI", "price": "Giao diện Người dùng Cảm xúc", "quantity": "", "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/support-v3/function-list/EMUI-13icon.png"},
+                        {"id": "hisuite", "name": "HiSuite", "price": "Trình quản lý thiết bị thông minh Android","quantity": "", "image": "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/southeast-asia/vn/support/support-v3/homepage/hisuitex2-0823.png"}
+                    ]
+                }
+             
+            ]
+          }
+
+    ]
+  }
+
+
+
+ 
