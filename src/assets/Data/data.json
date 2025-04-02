@@ -6,7 +6,11 @@
     "phone": "0212123654",
     "address": "Hà Nội",
     "role": "Khách hàng",
+<<<<<<< HEAD
     "avatar": "/uploads/1742564431498-10634296.png"
+=======
+    "avatar": "/uploads/1743578735333-566082073.jpg"
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
   },
   {
     "email": "user2@example.com",

@@ -68,7 +68,7 @@ export const ProductProvider = ({ children }) => {
                 loadData(
                     "products",
                     (id) =>
-                        `https://67d23e3290e0670699bcc2c3.mockapi.io/da/dongHo/${id}`,
+                        `https://67d23e3290e0670699bcc2c3.mockapi.io/da/wearables/${id}`,
                     setProducts,
                     "products"
                 ),

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { images } from "../../assets/image";
 
 import NavItem from "../ui/NavItem";
@@ -12,7 +12,7 @@ const Header = ({ onHeaderHeightChange = () => {}, user, handleLogout }) => {
     const headerRef = useRef(null);
     const [headerHeight, setHeaderHeight] = useState(0);
     const [isScrolled, setIsScrolled] = useState(false);
-
+    const navigate = useNavigate();
     useEffect(() => {
         if (headerRef.current) {
             const height = headerRef.current.offsetHeight;
@@ -25,11 +25,20 @@ const Header = ({ onHeaderHeightChange = () => {}, user, handleLogout }) => {
         };
 
         window.addEventListener("scroll", handleScroll);
+<<<<<<< HEAD
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, [onHeaderHeightChange]);
 
+=======
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    const logoutAndRedirect = () => {
+        handleLogout();
+        navigate("/vn/login"); 
+    };
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
     return (
         <>
             <header
@@ -95,13 +104,18 @@ const Header = ({ onHeaderHeightChange = () => {}, user, handleLogout }) => {
                                         <div className="flex items-center space-x-4">
                                             <Link
                                                 to="/vn/profile"
-                                                className="text-lg font-semibold text-blue-600 hover:underline"
+                                                className="text-lg font-semibold text-black-600 "
                                             >
                                                 {user.name}
                                             </Link>
                                             <button
+<<<<<<< HEAD
                                                 onClick={handleLogout}
                                                 className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 transition duration-200"
+=======
+                                                onClick={logoutAndRedirect}
+                                                className="bg-red-500 text-white px-3 py-1 rounded"
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
                                             >
                                                 Đăng xuất
                                             </button>

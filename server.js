@@ -26,7 +26,7 @@ const readData = () => {
     }
 };
 
-// Ghi dữ liệu vào file JSON
+
 const writeData = (data) => {
     fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 };
@@ -53,12 +53,14 @@ app.post("/signup", (req, res) => {
     const users = readData();
     const { name, email, phone, address, password, role } = req.body;
 
-    // Kiểm tra email đã tồn tại chưa
     if (users.some((user) => user.email === email)) {
         return res.status(400).json({ message: "Email đã tồn tại!" });
     }
 
+<<<<<<< HEAD
     // Tạo user mới (Không có avatar lúc đầu)
+=======
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
     const newUser = { name, email, phone, address, password, role, avatar: null };
     users.push(newUser);
     writeData(users);
@@ -70,14 +72,20 @@ app.post("/signup", (req, res) => {
 app.post("/update-avatar", upload.single("avatar"), (req, res) => {
     const users = readData();
     const { email } = req.body;
+<<<<<<< HEAD
 
     // Tìm user theo email
+=======
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
     const userIndex = users.findIndex((user) => user.email === email);
     if (userIndex === -1) {
         return res.status(404).json({ message: "Người dùng không tồn tại!" });
     }
+<<<<<<< HEAD
 
     // Lưu đường dẫn ảnh mới
+=======
+>>>>>>> f1d5cb053aa52cce95bc525027c4747378020eb9
     const avatarPath = req.file ? `/uploads/${req.file.filename}` : null;
     if (!avatarPath) {
         return res.status(400).json({ message: "Không có ảnh được tải lên!" });

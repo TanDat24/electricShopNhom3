@@ -8,7 +8,7 @@ const Signup = () => {
     phone: "",
     address: "",
     password: "",
-    confirmPassword: "", // Chỉ dùng để kiểm tra, không gửi lên server
+    confirmPassword: "",
     role: "Nhân viên",
   });
 
@@ -33,7 +33,7 @@ const Signup = () => {
       return;
     }
 
-    // Chuẩn bị dữ liệu gửi lên server (bỏ confirmPassword)
+    
     const { confirmPassword, ...dataToSend } = formData;
 
     try {
@@ -48,7 +48,7 @@ const Signup = () => {
       const data = await response.json();
       if (response.ok) {
         alert("Đăng ký thành công!");
-        navigate("/vn/login"); // Chuyển hướng về trang đăng nhập
+        navigate("/vn/login"); 
       } else {
         setError(data.message);
       }

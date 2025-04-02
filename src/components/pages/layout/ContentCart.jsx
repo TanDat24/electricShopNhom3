@@ -5,7 +5,15 @@ import ButtonKPInter from "../../ui/ButtonUI/ButoonKPInter";
 import ButtonMNInter from "../../ui/ButtonUI/ButtonMNInter";
 
 // eslint-disable-next-line react/prop-types
-const ContentCart = ({ title, des, name, id, image = [] }) => {
+const ContentCart = ({
+    title,
+    des,
+    name,
+    id,
+    image = [],
+    productId,
+    category,
+}) => {
     return (
         <div className="container mx-auto" id={id}>
             <h1 className="text-[50px] pt-[80px] flex align-center justify-center font-semibold">
@@ -62,7 +70,11 @@ const ContentCart = ({ title, des, name, id, image = [] }) => {
                 <div className="flex align-center justify-between pt-8">
                     <p className="text-[34px] pt-2 font-semibold">{name}</p>
                     <div className="w-1/5 flex">
-                        <ButtonKPInter title="Khám Phá" />
+                        <ButtonKPInter
+                            title="Khám Phá"
+                            category={category}
+                            productId={productId}
+                        />
                         <ButtonMNInter />
                     </div>
                 </div>

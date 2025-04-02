@@ -16,9 +16,15 @@ const TabLaptops = () => {
                 {laptops[1] && (
                     <BannerItem
                         title={laptops[1].title}
-                        buttonkp={<ButtonKPBasic title="Khám Phá" />}
+                        buttonkp={
+                            <ButtonKPBasic
+                                title="Khám Phá"
+                                category="laptops"
+                                productId={laptops[1].id}
+                            />
+                        }
                         buttonmn={<ButtonMNBasic />}
-                        image={laptops[1].images.anh1} // Lấy ảnh đầu tiên
+                        image={laptops[1].images.anh1}
                     />
                 )}
             </div>
@@ -29,6 +35,8 @@ const TabLaptops = () => {
                             title={laptops[2].title}
                             name={laptops[2].name}
                             image={Object.values(laptops[2].images)}
+                            category="laptops"
+                            productId={laptops[2].id}
                         />
                     )}
                 </div>
@@ -38,6 +46,8 @@ const TabLaptops = () => {
                     <CartComputer
                         des={laptops[3].des}
                         image={laptops[3].images.anh1}
+                        category="laptops"
+                        productId={laptops[3].id}
                     />
                 )}
             </div>
