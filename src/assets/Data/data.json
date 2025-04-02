@@ -1,0 +1,47 @@
+[
+  {
+    "email": "test@example.com",
+    "password": "123456",
+    "name": "Nguyễn Văn A",
+    "phone": "0212123655",
+    "address": "Hà Nội",
+    "role": "Khách hàng",
+    "avatar": "/uploads/1743595751096-337714023.png"
+  },
+  {
+    "email": "user2@example.com",
+    "password": "abcdef",
+    "name": "Trần Thị B",
+    "phone": "0987654321",
+    "address": "TP.HCM, Việt Nam",
+    "role": "Quản trị viên",
+    "avatar": null
+  },
+  {
+    "email": "user3@example.com",
+    "password": "123abc",
+    "name": "Phạm Văn C",
+    "phone": "0912345678",
+    "address": "Đà Nẵng, Việt Nam",
+    "role": "Nhân viên",
+    "avatar": null
+  },
+  {
+    "name": "Ngô Trần Văn Điềm",
+    "email": "vandiem2004@gmail.com",
+    "phone": "0398752911",
+    "address": "TPHCM",
+    "password": "123456",
+    "role": "Nhân viên",
+    "avatar": "/uploads/1742563847692-615974449.png"
+  },
+  {
+    "name": "A",
+    "email": "A@gmail.com",
+    "phone": "0242340525",
+    "address": "ABC",
+    "password": "123456",
+    "role": "Nhân viên",
+    "avatar": "/uploads/1743594465002-646154900.jpg"
+  }
+]
